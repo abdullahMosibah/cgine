@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load static i18n %}{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center mt-5 ">
+      <h1 class="title"> <img src='{% static "images/favicons/favicon.png" %}' width="50px">  cgine</h1>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <p class="welcome" > hello and welcome to cgine, we are currently working to make
+        cgine available to everyone, drop your email
+        and we will contact you when cgine is available ! have a nice day & stay safe</p>
+    </div>
+  <div class="row justify-content-center mt-5">
+    <p><a href="{% url 'about' %}">about</a> ● <a href="{% url 'about' %}">contact</a> ● <a href="{% url 'about' %}">story</a> </p>
+  </div>
+  </div>
+{% endblock content %}
