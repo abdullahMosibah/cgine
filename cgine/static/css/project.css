@@ -5,19 +5,35 @@
   background-color: white;
   border-color: #d6e9c6;
 }
+
 .alert-error {
   color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7;
 }
-body{
+
+body {
   background: #fff2db;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
-.welcome{
+
+.welcome {
   color: #4c4c4c;
   text-align: center;
   width: 50%;
   font-size: 1.5em;
+}
 
+p {
+  font-size: 1.4em;
+}
+
+.green-highlight {
+ background: rgba(22, 160, 133, 0.2);
+  padding: 5px 5px;
+}
+
+.red-highlight {
+  background: rgba(192, 57, 43, 0.2);
+  padding: 5px 5px;
 }
