@@ -29,11 +29,53 @@ p {
 }
 
 .green-highlight {
- background: rgba(22, 160, 133, 0.2);
-  padding: 5px 5px;
+  background: rgba(22, 160, 133, 0.2);
+  padding: 2px 2px;
 }
 
 .red-highlight {
   background: rgba(192, 57, 43, 0.2);
-  padding: 5px 5px;
+  padding: 2px 2px;
+
+}
+
+.yellow-highlight {
+  background: rgba(243, 156, 18, 0.2);
+  padding: 2px 2px;
+
+}
+
+.video {
+  width: 18rem;
+  height: 30%;
+}
+
+.info {
+  width: 18rem;
+  background-color: #ffffff;
+  position: fixed;
+  visibility: hidden;
+  z-index: 1;
+  top: 40%;
+  left: 55%;
+}
+
+.show {
+  visibility: visible;
+}
+
+#progress-bar {
+  height: 5px;
+  background-color: #b94a48;
+  width: 0;
+  position: fixed;
+
+}
+
+.search_keyword {
+  font-size: 1em;
+}
+
+.search-btn {
+  font-size: 0.7em;
 }

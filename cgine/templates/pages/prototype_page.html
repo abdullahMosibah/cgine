@@ -1,8 +1,17 @@
 {% extends 'base.html' %} {% load static i18n %}{% block content %}
+  <div class="sticky-top" id="progress-bar"></div>
   {% include "navbar.html" %}
+
+  <div id="info_box" class=" px-2 py-2  border rounded info shadow">
+    <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
+    <button id="google_btn" type="button" class="btn-outline-info btn search-btn">search google</button>
+    <button id="google_scholar_btn" type="button" class="btn-outline-info btn search-btn">search google scholar
+    </button>
+  </div>
+
   <div class="container mt-3">
     <div class="row main-row">
-      <div class="col-2  bg-primary- ">
+      <div class="col-2   bg-primary- ">
         <ul class="sticky-top">
           <li>
             <p class="text-break">asdasdadadadsad</p>
@@ -29,239 +38,46 @@
       </div>
 
       <div class="col-10 main-content bg-secondary-">
+
         <h1 class="text-start mb-3">Loren ipsum the beginning</h1>
+
         <div class="row knowledge-block ">
           <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
+            <button type="button" class=" mb-2 btn btn-outline-primary">Play</button>
             <p class=" text-start text-break">
-              <span class="green-highlight">Lorem ipsum dolor sit amet,</span>  <span class="red-highlight">kconsectetur adipiscing elit. Sed convallis orci elit</span>, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
+              <span id="text-block" class=" text-block green-highlight">Lorem ipsum dolor sit amet,</span>
+              <span id="text-block" class=" text-block red-highlight">kconsectetur adipiscing elit. Sed convallis orci elit</span>,
+              <span id="text-block" class=" text-block yellow-highlight">vel blandit nunc
+                consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse</span>
             </p>
+            <div id="info_box" class="px-2 py-2  border rounded info shadow">
+              <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
+              <button type="button" class="btn-outline-info btn search-btn">search google</button>
+              <button type="button" class="btn-outline-info btn search-btn">search google scholar</button>
+
+            </div>
 
             <ul>
               <li>
-                <p class="text-start">Nullam scelerisque enim</p>
+                <p class="text-start"><span id="text-block" class="red-highlight"> scelerisque enim </span></p>
               </li>
               <li>
-                <p class="text-start">Nullam scelerisque enim</p>
+                <p class="text-start"><span id="text-block" class="yellow-highlight"> scelerisque enim </span></p>
               </li>
               <li>
-                <p class="text-start">Nullam scelerisque enim</p>
+                <p class="text-start"><span id="text-block" class="green-highlight"> scelerisque enim </span></p>
               </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
+
             </ul>
           </div>
 
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow-sm  video">
             </div>
           </div>
 
         </div>
 
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis orci elit, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
-            </p>
-
-            <ul>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis orci elit, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
-            </p>
-
-            <ul>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis orci elit, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
-            </p>
-
-            <ul>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis orci elit, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
-            </p>
-
-            <ul>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class="btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis orci elit, vel blandit nunc
-              consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse
-            </p>
-
-            <ul>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-              <li>
-                <p class="text-start">Nullam scelerisque enim</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-2">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
 
       </div>
 
