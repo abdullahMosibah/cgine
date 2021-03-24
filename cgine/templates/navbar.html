@@ -3,7 +3,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">cgine</a>
+          <a class="navbar-brand" href="{% url 'home' %}"> <strong>cgine 📚 </strong></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class=" navbar-nav mr-auto">
@@ -11,7 +11,7 @@
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">About</a>
+              <a class="nav-link" href="main/demo">Demo</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -20,16 +20,16 @@
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'home' %}">rush</a>
+                <a class="nav-link" href="{% url 'home' %}"></a>
               </li>
             {% else %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a id="sign-up-link" class="nav-link" href="{% url 'home' %}">rush</a>
+                <a id="sign-up-link" class="nav-link" href="{% url 'home' %}"></a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url 'home' %}">home</a>
+                <a id="log-in-link" class="nav-link" href="{% url 'home' %}"></a>
               </li>
             {% endif %}
           </ul>

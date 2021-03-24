@@ -38,8 +38,15 @@ p {
   font-size: 1em;
 }
 
+.dis{
+  font-size: 1em;
+}
+
 .index li{
   margin-bottom: -0.8em;
+}
+.name{
+  color: rgba(22, 160, 133, 1);;
 }
 
 h1{

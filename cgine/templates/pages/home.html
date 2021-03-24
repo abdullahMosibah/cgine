@@ -1,15 +1,29 @@
 {% extends "base.html" %}{% load static i18n %}{% block content %}
-  <div class="container mt-5">
-    <div class="row justify-content-center mt-5 ">
-      <h1 class="title"> <img src='{% static "images/favicons/favicon.png" %}' width="50px">  cgine</h1>
+  {% include 'navbar.html' %}
+
+
+
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1 class="text-center mt-5"><strong>cgine 📚 </strong></h1>
+      <h1 class="text-center  ">welcome, cgine is a new format to deliver educational material to make receiving information concise and self-paced</h1>
+      <h3 class=" mb-3 mt-3  text-center"> ● ● ● ● ●</h3>
+      <h3 class="text-center  ">i'm  currently working to make
+        cgine available to everyone, check out our Demo & drop your email and i will let you know when cgine is
+        available! 😘  </h3>
+
+      <a href="main/demo">
+        <button class="btn btn-primary btn-lg mt-3 ">DEMO</button>
+      </a>
     </div>
-    <div class="row justify-content-center mt-3">
-      <p class="welcome" > hello and welcome to cgine, we are currently working to make
-        cgine available to everyone, drop your email
-        and we will contact you when cgine is available ! have a nice day & stay safe</p>
+    <div class="row justify-content-center mt-5 pt-5">
+      <h4>by <a class="name" href="https://github.com/abdullahMosibah">Abdullah Mosaibah</a>
+      </h4>
+      <!--
+      <h4><strong>This project is open sourced </strong><a href="https://github.com/abdullahMosibah/Meeting">Github
+        repo</a></h4>
+        -->
     </div>
-  <div class="row justify-content-center mt-5">
-    <p><a href="{% url 'about' %}">about</a> ● <a href="{% url 'about' %}">contact</a> ● <a href="{% url 'about' %}">story</a> </p>
-  </div>
   </div>
 {% endblock content %}

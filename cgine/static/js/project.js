@@ -1,5 +1,9 @@
-let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
+$(document).ready(function () {
+    $("#disclaimer").modal('show');
+});
 
+let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
+let disclaimer = document.getElementById("disclaimer");
 //--------------------- info box pop-up-------------------------------
 // info keyword that is located inside the info box
 let infoKeyword = document.getElementById("info_keyword");
@@ -15,7 +19,8 @@ let googleScholarBtn = document.getElementById("google_scholar_btn");
 function google_search(evt) {
     window.open(`https://www.google.com/search?q=${evt.target.myParam}`, '_blank');
 }
-function  google_scholar_search(evt){
+
+function google_scholar_search(evt) {
     window.open(`https://scholar.google.com/scholar?hl=en&as_sdt=0,5&q=${evt.target.myParam}`, "_blank");
 
 }
@@ -26,7 +31,7 @@ function populate_info_box(keyword) {
     googleBtn.addEventListener("click", google_search);
     googleBtn.myParam = keyword;
     //listener for the google scholar search.
-    googleScholarBtn.addEventListener('click',google_scholar_search);
+    googleScholarBtn.addEventListener('click', google_scholar_search);
     googleScholarBtn.myParam = keyword;
     // to make the info box disappear when clicked at any location at the document.
     window.addEventListener('click', function () {
@@ -86,5 +91,4 @@ for (let i = 0; i <= playButtons.length; i++) {
         this.dataset.playing = 'false';
         playButtons[i].textContent = "play";
     }, false);
-
 }

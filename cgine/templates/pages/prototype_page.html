@@ -1,6 +1,30 @@
 {% extends 'base.html' %} {% load static i18n %}{% block content %}
+
+  <div class="modal fade" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">DISCLAIMER</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-start dis">this version of cgine is still a very early  so expect bugs or dysfunctions😅 -sorry there are a lot of those-</p>
+        <p class="text-start dis"><strong>PS </strong>:i know the color scheme is not that good, i'm not a designer😜 </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="sticky-top" id="progress-bar"></div>
   {% include "navbar.html" %}
+
+  <!-- Modal -->
 
   <div id="info_box" class=" px-2 py-2  border rounded info shadow">
     <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
