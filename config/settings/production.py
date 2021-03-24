@@ -7,7 +7,7 @@ from .base import env
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 
-ALLOWED_HOSTS = ["cgine.app", "www.cgine.app"]
+ALLOWED_HOSTS = ["cgine.herokuapp.com", "cgine.app", "www.cgine.app"]
 # TODO:after procution enable the os enviroment
 # ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["cgine.app"])
 
