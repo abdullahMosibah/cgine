@@ -13,10 +13,16 @@
 }
 
 body {
-  background: #fff2db;
+   background-color: #E5EFC1;
   font-family: 'Montserrat', sans-serif;
 }
+nav{
+  background-color:#39AEA9 ;
+}
+.text-container{
+  background-color: #e2e2e2;
 
+}
 .welcome {
   color: #4c4c4c;
   text-align: center;
@@ -26,8 +32,23 @@ body {
 
 p {
   font-size: 1.4em;
+  color: #243135;
+}
+.index-element{
+  font-size: 1em;
 }
 
+.index li{
+  margin-bottom: -0.8em;
+}
+
+h1{
+  color: #243135;
+}
+.text-resource{
+  font-size: 1.2em;
+
+}
 .green-highlight {
   background: rgba(22, 160, 133, 0.2);
   padding: 2px 2px;
@@ -47,7 +68,13 @@ p {
 
 .video {
   width: 18rem;
-  height: 30%;
+  height: 40%;
+}
+.resources {
+  width: 18rem;
+
+  height: 55%;
+  background-color: #FDCEAA;
 }
 
 .info {
@@ -66,7 +93,7 @@ p {
 
 #progress-bar {
   height: 5px;
-  background-color: #b94a48;
+  background-color: #F4837D;
   width: 0;
   position: fixed;
 
@@ -78,4 +105,13 @@ p {
 
 .search-btn {
   font-size: 0.7em;
+}
+
+a{
+  color: #ffffff;
+}
+
+.test_video{
+  width: 98%;
+  height: 98%;
 }

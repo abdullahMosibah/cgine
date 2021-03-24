@@ -4,81 +4,922 @@
 
   <div id="info_box" class=" px-2 py-2  border rounded info shadow">
     <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
-    <button id="google_btn" type="button" class="btn-outline-info btn search-btn">search google</button>
-    <button id="google_scholar_btn" type="button" class="btn-outline-info btn search-btn">search google scholar
-    </button>
+    <button id="google_btn"   type="button" class="btn-outline-info btn search-btn">search google</button>
+    <button id="google_scholar_btn" type="button" class="btn-outline-info btn search-btn">search google scholar</button>
+    <button type="button" class="btn btn-outline-primary search-btn">play</button>
   </div>
 
   <div class="container mt-3">
     <div class="row main-row">
       <div class="col-2   bg-primary- ">
-        <ul class="sticky-top">
+        <ul class="sticky-top index">
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+            <a href="#one"><p class="text-break index-element">introduction</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+             <a href="#two"><p class="text-break index-element">Objectives</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+            <a href="#three"><p class="text-break index-element">Interaction Design</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+           <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+            <a href="#five"><p class="text-break index-element">Bad design</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+            <a href="#seven"><p class="text-break index-element">Good Design</p></a>
+          </li>
+           <li>
+            <a href="#eight"><p class="text-break index-element">users' needs</p></a>
           </li>
           <li>
-            <p class="text-break">asdasdadadadsad</p>
+            <a href="#nine"><p class="text-break index-element">definition</p></a>
+          </li>
+          <li>
+            <a href="#ten"><p class="text-break index-element">Goals of interaction Design</p></a>
+          </li>
+          <li>
+            <a href="#eleven"><p class="text-break index-element">Design</p></a>
+          </li>
+          <li>
+            <a href="#twelve"><p class="text-break index-element">Working in multidisciplinary teams</p></a>
+          </li>
+          <li>
+            <a href="#thirteen"><p class="text-break index-element">Interaction design in business</p></a>
+          </li>
+          <li>
+            <a href="#fourteen"><p class="text-break index-element">THE birth of HCI</p></a>
+          </li>
+          <li>
+            <a href="#sixteen"><p class="text-break index-element">WHY?</p></a>
           </li>
         </ul>
       </div>
 
       <div class="col-10 main-content bg-secondary-">
 
-        <h1 class="text-start mb-3">Loren ipsum the beginning</h1>
-
-        <div class="row knowledge-block ">
-          <div class="col-8  my-1  px-2 py-2 border shadow-sm rounded">
-            <button type="button" class=" mb-2 btn btn-outline-primary">Play</button>
-            <p class=" text-start text-break">
-              <span id="text-block" class=" text-block green-highlight">Lorem ipsum dolor sit amet,</span>
-              <span id="text-block" class=" text-block red-highlight">kconsectetur adipiscing elit. Sed convallis orci elit</span>,
-              <span id="text-block" class=" text-block yellow-highlight">vel blandit nunc
-                consectetur at. Nullam scelerisque enim egestas molestie blandit. Sed ut facilisis dui. Suspendisse</span>
-            </p>
-            <div id="info_box" class="px-2 py-2  border rounded info shadow">
-              <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
-              <button type="button" class="btn-outline-info btn search-btn">search google</button>
-              <button type="button" class="btn-outline-info btn search-btn">search google scholar</button>
-
+        <h1 class="text-start mb-3">Interaction Design Chapter 1</h1>
+        <div id="one" class="row  knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/1.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
             </div>
-
+            <p class=" text-start text-break">
+              <span id="text-block" class="text-block green-highlight">Chapter 1 : WHAT IS INTERACTION DESIGN?</span>
+            </p>
             <ul>
               <li>
-                <p class="text-start"><span id="text-block" class="red-highlight"> scelerisque enim </span></p>
+                <p class="text-start"><span id="text-block" class="red-highlight">1.1 Introduction</span></p>
               </li>
               <li>
-                <p class="text-start"><span id="text-block" class="yellow-highlight"> scelerisque enim </span></p>
+                <p class="text-start"><span id="text-block" class="red-highlight">1.2 Good and Poor designs</span>
+                </p>
               </li>
               <li>
-                <p class="text-start"><span id="text-block" class="green-highlight"> scelerisque enim </span></p>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">1.3 What is Interaction Design?</span></p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">The Birth of HCI</span></p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">1.4 The User Experience</span></p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">1.6 Interaction Design, usability and the User Experience</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="http://www.id-book.com/" target="_blank"><p class=" text-start text-resource">interaction
+                    design TextBook</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="two" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/2.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12">
+                    <button data-playing="false" role="switch" aria-checked="false" type="button"
+                            class="play_button mb-2 btn btn-outline-info">Play
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Objectives :-</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">Explain the difference between good and bad interaction design.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="yellow-highlight">Describe what interaction design is and how it relates to human-computer interaction and other fields</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="green-highlight"> Explain the relationship between user experience and usability</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">Describe what and who is involved in the process of interaction design.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="yellow-highlight">Outline the different forms of guidance used in interaction design.</span>
+                </p>
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block" class="green-highlight">Enable you to evaluate an interactive product and explain what is good and bad about it in terms of the goals and core principles of interaction design.</span>
+                </p>
               </li>
 
             </ul>
           </div>
 
           <div class="col-2 mt-2">
-            <div class="border rounded shadow-sm  video">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+              </ul>
             </div>
           </div>
 
         </div>
+        <div id="three" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/3.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Interaction Design:-</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">How many interactive products are there for everyday use?</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="yellow-highlight">What are those ?</span></p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="green-highlight">How usable they are?</span></p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">How many are easy, effortless (effective), and enjoyable (pleasure to use)?</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="four" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/4.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight"> One aim of interaction design is to:</span></p>
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="green-highlight">reduce the negative aspects such as frustration, anger,  and annoyance</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="yellow-highlight">and increase the positive aspects such as enjoyment, engagement.</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+                <li>
+                  <a href="#"><p class=" text-start text-resource"></p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="five" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/5.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+            <img src="{% static 'images/img1.png' %}" class=" mb-3 mx-auto d-flex" style="width: 60%;" alt="">
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Elevator controls and labels on the bottom row all look the same, so it is easy to push a label by mistake instead of a control button</span>
+              <span id="text-block" class=" text-block red-highlight">People do not make same mistake for the labels and buttons on the top row. Why not?</span>,
+
+            </p>
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="http://www.baddesigns.com/" target="_blank"><p class=" text-start text-resource">Bad
+                    designs</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="six" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/6.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Why is this vending machine so bad?</span>
+            </p>
+            <img src="{% static 'images/img2.jpg' %}" class=" mb-2 mx-auto d-flex" style="width: 60%;" alt="">
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block" class="red-highlight">Need to push button first to activate reader.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="yellow-highlight">Normally insert bill first before making selection.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">Contravenes well known convention.</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                  <a href="http://www.baddesigns.com/" target="_blank"><p class=" text-start text-resource">Bad
+                    designs</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="seven" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/7.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Good Design</span>
+            </p>
+            <img src="{% static 'images/img3.jpg' %}" class=" mb-2 mx-auto d-flex" style="width: 60%;" alt="">
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Based on how everyday objects behave.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block" class="yellow-highlight">Easy, intuitive and a pleasure to use.</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">Only requires one-step action to perform core tasks.</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="eight" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/8.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Understanding users’ needs</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Need to take into account what people are good and bad at</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="yellow-highlight">Consider what might help people in the way they currently do things</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">Think through what might provide quality user experiences</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Listen to what people want and get them involved</span>
+                </p>
+              </li>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="yellow-highlight">Use tried and tested user-centred methods</span>
+                </p>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="nine" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static '' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">What is interaction design?</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">“Designing interactive products to support the way people communicate and interact in their everyday and working lives. Preece, Sharp and Rogers (2015)”</span>
+                </p>
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                   <a href="https://www.researchgate.net/publication/273947524_Interaction_Design_Beyond_Human-Computer_Interaction"><p class=" text-start text-resource">research gate</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="ten" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/9.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Goals of interaction design</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">“Develop usable products”</span>
+                </p>
+
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="red-highlight">“Usability means easy to learn, effective to use and provide an enjoyable experience”</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">“Involve users in the design process”</span>
+                </p>
+
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="eleven" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/10.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Which kind of design?</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">“Number of other terms used emphasizing what is being designed, e.g.”</span>
+                </p>
+
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="yellow-highlight">“user interface design, software design, user-centered design, product design, web design, experience design (UX)s”</span>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">“Interaction design is the umbrella term covering all of these aspects”</span>
+                </p>
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="red-highlight">“fundamental to all disciplines, fields, and approaches concerned with researching and designing computer-based systems for people”</span>
+                    </p>
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="twelve" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/11.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Working in multidisciplinary teams :-</span>
+            </p>
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Many people from different backgrounds involved</span>
+                </p>
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="yellow-highlight">Different perspectives and ways of seeing and talking about things</span>
+                </p>
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="green-highlight">Benefits</span>
+                </p>
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="green-highlight">more ideas and designs generated</span>
+                    </p>
+                  </li>
+                </ul>
+
+              </li>
+
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Disadvantages
+</span>
+                </p>
+                <ul>
+                  <li>
+                    <p class="text-start"><span id="text-block"
+                                                class="red-highlight">difficult to communicate and progress forward the designs being create
+</span>
+                    </p>
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="thirteen" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/12.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Interaction design in business</span>
+            </p>
+
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">Increasing number of ID consultancies, examples of well known ones include:</span>
+                </p>
+              </li>
+
+              <ul>
+                <li>
+                  <p class="text-start"><span id="text-block"
+                                              class="red-highlight">Nielsen Norman Group: “help companies enter the age of the consumer, designing human-centered products and services”</span>
+                  </p>
+                </li>
+
+                <li>
+                  <p class="text-start"><span id="text-block"
+                                              class="red-highlight">Cooper: “From research and product to goal-related design”</span>
+                  </p>
+                </li>
+
+                <li>
+                  <p class="text-start"><span id="text-block"
+                                              class="red-highlight">Swim: “provides a wide range of design services, in each case targeted to address the product development needs at hand”</span>
+                  </p>
+                </li>
+
+                <li>
+                  <p class="text-start"><span id="text-block"
+                                              class="red-highlight">IDEO: “creates products, services and environments for companies pioneering new ways to provide value to their customers”</span>
+                  </p>
+                </li>
+              </ul>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="fourteen" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/13.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">THE BIRTH OF HCI</span>
+            </p>
+            <img src="{% static 'images/img4.jpg' %}" class=" mb-2 mx-auto d-flex" style="width: 60%;" alt="">
+            <ul>
+              <li>
+                <p class="text-start"><span id="text-block"
+                                            class="red-highlight">“In July of 1945, Vannevar Bush wrote an article for the Atlantic Monthly, later reprinted in Life, called “As We May Think”.</span>
+                </p>
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="fifteen" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/14.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">ENIAC – First Computer</span>
+            </p>
+            <img src="{% static 'images/img5.jpg' %}" class=" mb-2 mx-auto d-flex" style="width: 60%;" alt="">
+
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">MEMEX – Future Interactive Desk</span>
+            </p>
+            <img src="{% static 'images/img6.jpg' %}" class=" mb-2 mx-auto d-flex" style="width: 60%;" alt="">
+            <p class=" text-start text-break">
+              <span id="text-block" class=" text-block green-highlight">Bush wrote of future interactive desk, he called it Memmex. The idea is that all of the world’s information would be available on the knowledge worker’s desktop.</span>
+            </p>
 
 
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="sixteen" class="row knowledge-block">
+          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <audio src="{% static 'audios/15.m4a' %}" class="test_audio"></audio>
+            <div class="row">
+              <div class="col-12">
+                <button data-playing="false" role="switch" aria-checked="false" type="button"
+                        class="play_button mb-2 btn btn-outline-info">Play
+                </button>
+              </div>
+            </div>
+            <p class=" text-start text-break">
+              <span id="text-block"
+                    class=" text-block green-highlight">Sharing this history for those of reasons:</span>
+            </p>
+
+            <ul>
+              <li>
+                <p class=" text-start text-break">
+                  <span id="text-block" class=" text-block green-highlight">First: seeing very important and influential work reminds me that good ideas are often strange or might not work well early on.</span>
+                </p>
+              </li>
+
+              <li>
+                <p class=" text-start text-break">
+                  <span id="text-block" class=" text-block green-highlight">Second: as Bill Buxton point out, if you are looking for a good future product, the seeds you need may already be out there in rough form, waiting for you to polish it into a diamond.</span>
+                </p>
+              </li>
+
+              <li>
+                <p class=" text-start text-break">
+                  <span id="text-block" class=" text-block green-highlight">Third, these early systems are totally awesome and inspiring.</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2 mt-2">
+            <div class="border rounded shadow  video">
+              <video class="test_video" controls>
+                <source src="{% static 'videos/test_video.mp4' %}">
+              </video>
+            </div>
+            <div class="py-1 px-1 mt-1  border rounded shadow resources">
+              <p class="text-start mt-2">related resources</p>
+              <ul>
+                <li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
 
 
