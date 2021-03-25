@@ -63,7 +63,9 @@ let playButtons = document.querySelectorAll(".play_button");
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 
+
 let test_audios = document.querySelectorAll(".test_audio");
+
 
 
 //event listener on the play button.
@@ -72,6 +74,7 @@ for (let i = 0; i <= playButtons.length; i++) {
     let track = audioContext.createMediaElementSource(test_audios[i]);
     track.connect(audioContext.destination);
     playButtons[i].addEventListener("click", function (e) {
+
         // check if context is in suspended state (autoplay policy)
         if (audioContext.state === "suspended") {
             audioContext.resume();
