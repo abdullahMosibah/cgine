@@ -25,7 +25,7 @@ class knowledge_block(models.Model):
     lesson = models.ForeignKey(
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
-    time_added = models.DateTimeField(auto_now_add=True, null=True)
+    time_added = models.DateTimeField(null=True)
     content = models.TextField()
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)
