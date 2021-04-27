@@ -151,6 +151,12 @@ STATICFILES_FINDERS = [
 # CKEDITOR
 # ------------------------------------------------------------------------------
 CKEDITOR_UPLOAD_PATH = "uploads/"
+AWS_QUERYSTRING_AUTH = False
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+    }
+}
 
 # MEDIA
 # ------------------------------------------------------------------------------
