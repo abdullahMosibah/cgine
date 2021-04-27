@@ -73,8 +73,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "cgine.users.apps.UsersConfig",
-    "main"
-    # TODO:check if we have to mention the cgine before our local app name.
+    "cgine.main"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
