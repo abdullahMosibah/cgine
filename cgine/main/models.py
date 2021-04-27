@@ -1,5 +1,6 @@
 import uuid
 
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
@@ -26,7 +27,7 @@ class knowledge_block(models.Model):
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateTimeField(null=True)
-    content = models.TextField()
+    content = RichTextField()
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)
     resource = models.TextField()

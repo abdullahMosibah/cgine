@@ -69,6 +69,8 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 LOCAL_APPS = [
@@ -146,6 +148,9 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+# CKEDITOR
+# ------------------------------------------------------------------------------
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # MEDIA
 # ------------------------------------------------------------------------------

@@ -1,25 +1,28 @@
 {% extends 'base.html' %} {% load static i18n %}{% block content %}
 
-  <div class="modal fade" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">DISCLAIMER</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class="text-start dis">this version of cgine is still a very early  so expect bugs or dysfunctions😅 -sorry there are a lot of those-</p>
-        <p class="text-start dis"><strong>PS </strong>:i know the color scheme is not that good, i'm not a designer😜 </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <div class="modal fade" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">DISCLAIMER</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-start dis">this version of cgine is still a very early so expect bugs or dysfunctions😅 -sorry
+            there are a lot of those-</p>
+          <p class="text-start dis"><strong>PS </strong>:i know the color scheme is not that good, i'm not a designer😜
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <div class="sticky-top" id="progress-bar"></div>
   {% include "navbar.html" %}
@@ -28,7 +31,7 @@
 
   <div id="info_box" class=" px-2 py-2  border rounded info shadow">
     <p class=" search_keyword" id="info_keyword">double click at any paragraph to search</p>
-    <button id="google_btn"   type="button" class="btn-outline-info btn search-btn">search google</button>
+    <button id="google_btn" type="button" class="btn-outline-info btn search-btn">search google</button>
     <button id="google_scholar_btn" type="button" class="btn-outline-info btn search-btn">search google scholar</button>
     <button type="button" class="btn btn-outline-primary search-btn">play</button>
   </div>
@@ -41,13 +44,13 @@
             <a href="#one"><p class="text-break index-element">introduction</p></a>
           </li>
           <li>
-             <a href="#two"><p class="text-break index-element">Objectives</p></a>
+            <a href="#two"><p class="text-break index-element">Objectives</p></a>
           </li>
           <li>
             <a href="#three"><p class="text-break index-element">Interaction Design</p></a>
           </li>
           <li>
-           <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
+            <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
           </li>
           <li>
             <a href="#five"><p class="text-break index-element">Bad design</p></a>
@@ -55,7 +58,7 @@
           <li>
             <a href="#seven"><p class="text-break index-element">Good Design</p></a>
           </li>
-           <li>
+          <li>
             <a href="#eight"><p class="text-break index-element">users' needs</p></a>
           </li>
           <li>
@@ -87,7 +90,8 @@
         <h1 class="text-start mb-3">Interaction Design Chapter 1</h1>
         <div id="one" class="row  knowledge-block">
           <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
-            <audio crossorigin="anonymous" crossorigin="anonymous" src="{% static 'audios/1.m4a' %}" class="test_audio"></audio>
+            <audio crossorigin="anonymous" crossorigin="anonymous" src="{% static 'audios/1.m4a' %}"
+                   class="test_audio"></audio>
             <div class="row">
               <div class="col-12">
                 <button data-playing="false" role="switch" aria-checked="false" type="button"
@@ -539,7 +543,8 @@
               <p class="text-start mt-2">related resources</p>
               <ul>
                 <li>
-                   <a href="https://www.researchgate.net/publication/273947524_Interaction_Design_Beyond_Human-Computer_Interaction"><p class=" text-start text-resource">research gate</p></a>
+                  <a href="https://www.researchgate.net/publication/273947524_Interaction_Design_Beyond_Human-Computer_Interaction">
+                    <p class=" text-start text-resource">research gate</p></a>
                 </li>
               </ul>
             </div>
@@ -946,3 +951,49 @@
   </div>
 
 {% endblock content %}
+
+
+<ul>
+  <li>
+    <p><span id="text-block" class="text-block green-highlight">renal function test</span></p>
+  </li>
+  <li>
+    <p><span id="text-block" class="text-block green-highlight">liver function test</span></p>
+  </li>
+  <li>
+    <p><span id="text-block" class="text-block green-highlight">and pulmonary function test</span></p>
+  </li>
+</ul>
+
+
+<p>but what does the pulmonary system do?</p>
+<ul>
+  <li>
+    <p class="text-start"><span id="text-block" class="red-highlight">get filled with air volumes</span></p>
+  </li>
+  <li>
+    <p class="text-start"><span id="text-block" class="yellow-highlight">conductive airways</span></p>
+  </li>
+</ul>
+
+<p><span id="text-block" class="text-block green-highlight"></span>so the PFT tests the condition of the airways and
+  weither that lungs contains enough air</p>
+
+<p class=" text-start text-break">
+  before <span id="text-block" class="text-block yellow-highlight">fetus</span> is born, his lungs would be filled with
+  liquids means it does not contain air because <span id="text-block" class="text-block yellow-highlight">fetus</span>
+  does not
+  breath by his lungs, so when fetus gets out of the <span id="text-block"
+                                                           class="text-block red-highlight">uterus</span> the
+  contraction and the pressure on the fetus will force the
+  liquids to get out of his lungs during birth,
+</p>
+
+<p>and during first breath that happends when the fetus cry.
+some  <span id="text-block" class="text-block yellow-highlight">volume will get trapped in the lungs. approx. = 1500</span>
+and thats called  <span id="text-block" class="text-block yellow-highlight">residential volume</span>
+
+  and thats  <span id="text-block" class="text-block yellow-highlight">RV</span> will be in the lungs from the first cry during birth, till the human die.</p>
+
+
+<img src="https://cgine.s3.eu-central-1.amazonaws.com/images/2.svg">
