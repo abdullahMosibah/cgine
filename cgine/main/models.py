@@ -17,17 +17,18 @@ class lesson(models.Model):
         return self.title
 
     @property
-    def get_knowledge_block(self):
-        return self.knowledge_blocks.object.all()
+    def get_knowledge_blocks(self):
+        return self.knowledge_blocks.all().order_by("time_added")
 
 
 class knowledge_block(models.Model):
     lesson = models.ForeignKey(
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
+    time_added = models.DateTimeField(auto_now_add=True, null=True)
     content = models.TextField()
-    video = models.FileField(upload_to="videos/%y/%m/")
-    audio = models.FileField(upload_to="audios/%y/%m", null=True)
+    video = models.FileField(upload_to="videos/")
+    audio = models.FileField(upload_to="audios/", null=True)
     resource = models.TextField()
 
     # def __str__(self):

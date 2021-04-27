@@ -94,7 +94,7 @@
       <div class="col-10 main-content bg-secondary-">
         <h1 class="text-start mb-3">{{ lesson.title }}</h1>
 
-        {% for knowledge_block in knowledge_blocks %}
+          {% for knowledge_block in lesson.get_knowledge_blocks %}
         <div id="one" class="row  knowledge-block">
           <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
             <audio crossorigin="anonymous" crossorigin="anonymous" src="{{ knowledge_block.audio.url }}"
