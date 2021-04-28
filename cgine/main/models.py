@@ -1,12 +1,30 @@
 import uuid
 
-from ckeditor.fields import RichTextField
+# from ckeditor.fields import RichTextField
 from django.db import models
+from django.urls import reverse
+
+
+class category(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    icon = models.FileField(upload_to="category_icons/")
+
+    @property
+    def get_lessons(self):
+        return self.lessons.all().order_by("time_added")
+
+    def get_absolute_url(self):
+        return f"/category/{self.id}"
+
+    # temporary fix  for category url
 
 
 class lesson(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=True, unique=True
+    )
+    category = models.ForeignKey(
+        category, related_name="lessons", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateField(auto_now_add=True)
     help_text = "the main layer of the lesson"
@@ -26,7 +44,7 @@ class knowledge_block(models.Model):
     lesson = models.ForeignKey(
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
-    time_added = models.DateTimeField(null=True)
+    time_added = models.DateTimeField(auto_now_add=True, null=True)
     content = models.TextField()
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)

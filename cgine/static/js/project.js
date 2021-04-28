@@ -66,6 +66,18 @@ const audioContext = new AudioContext();
 
 let test_audios = document.querySelectorAll(".test_audio");
 
+let category_card = document.querySelectorAll(".category_card")
+
+for (let i = 0; i <= category_card.length; i++) {
+    category_card[i].addEventListener('mouseover', function () {
+        category_card[i].classList.remove("shadow-sm")
+        category_card[i].classList.add("shadow")
+    })
+    category_card[i].addEventListener('mouseout', function () {
+        category_card[i].classList.remove("shadow")
+        category_card[i].classList.add("shadow-sm")
+    })
+}
 
 
 //event listener on the play button.
