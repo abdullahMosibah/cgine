@@ -29,6 +29,7 @@ class lesson(models.Model):
     time_added = models.DateField(auto_now_add=True)
     help_text = "the main layer of the lesson"
     title = models.CharField(max_length=80, default="new lesson")
+    icon = models.FileField(upload_to="images/", null=True)
     # TODO: knowledge block count + add index content
     description = models.CharField(max_length=150)
 
@@ -38,6 +39,10 @@ class lesson(models.Model):
     @property
     def get_knowledge_blocks(self):
         return self.knowledge_blocks.all().order_by("time_added")
+
+    def get_absolute_url(self):
+        return f"/category/{self.category_id}/lesson/{self.id}"
+
 
 
 class knowledge_block(models.Model):

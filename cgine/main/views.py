@@ -8,7 +8,7 @@ def prototype_page_view(request):
     return render(request=request, template_name="pages/prototype_page.html")
 
 
-def lesson_view(request, id):
+def lesson_view(request, category_id, id):
     lesson_qs = get_object_or_404(lesson, id=id)
     knowledge_blocks_qs = knowledge_block.objects.filter(lesson=lesson_qs)
     context = {

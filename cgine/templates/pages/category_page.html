@@ -1,36 +1,22 @@
 {% extends 'base.html' %} {% load static i18n %}{% block content %}
-{% include "navbar.html" %}
-
-  <div class="container">
-   <div id="carouselExampleSlidesOnly" class="carousel slide"   data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'images/saad_academy.jpg' %}" class="d-block mx-auto"  alt="...">
+  {% include "navbar.html" %}
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="header rounded shadow" style="width: 100%; height: 20rem">
+        <img src="{% static 'images/saad_academy.jpg' %}" class="mx-auto d-block mt-5" height="70%">
+      </div>
     </div>
-    <div class="carousel-item">
-     <img src="{% static 'images/img1.png' %}" class="d-block mx-auto"  alt="...">
+    <div class="row">
+      {% for lesson in lessons %}
+        <a href="{{lesson.get_absolute_url}}">
+          <div class="card shadow-sm category_card mt-3" style="width: 20rem;">
+            <img src="{{lesson.icon.url}}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p class="card-text category_title text-center">{{lesson.title}}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
     </div>
-    <div class="carousel-item">
-      <img src="{% static 'images/saad_academy.jpg' %}" class="d-block mx-auto"  alt="...">
-    </div>
-  </div>
-</div>
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'images/saad_academy.jpg' %}"  class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'images/saad_academy.jpg' %}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-{{ category.name }}
-<button type="button" class="btn btn-primary">Primary</button>
-  <a href="{{ category.get_absolute_url }}">asdsadsadsadsadsadsadsadsadasdasdsadsadasdasd</a>
   </div>
 {% endblock content %}
