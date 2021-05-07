@@ -1,54 +1,128 @@
 {% extends "base.html" %}{% load static i18n %}{% block content %}
   {% include 'navbar.html' %}
 
-
-
-
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-
-      <h1 class="text-center mt-5"><strong>cgine 📚 </strong></h1>
-      <h1 class="text-center  ">welcome, cgine is a new format to deliver educational material to make receiving
-        information concise and self-paced</h1>
-      <h3 class=" mb-3 mt-3  text-center"> ● ● ● ● ●</h3>
-      <h3 class="text-center  ">i'm currently working to make
-        cgine available to everyone, check out our Demo & drop your email and i will let you know when cgine is
-        available! 😘 </h3>
-
-      <a href="/category/1">
-      <div class="card shadow-sm category_card mx-4 my-2" style="width: 10rem;">
-        <img src="{% static 'images/saad_academy.jpg' %}" class="card-img-top" alt="">
-        <div class="card-body">
-          <p class="card-text category_title text-center">Saad Academy</p>
+  <!-- the popup modal -->
+  <div class="modal fade popup-modal" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-content-popup">
+        <div class="modal-body">
+          <iframe width="100%" height="80%" id="popup_video" class="popup-video"
+                  src="{% static 'videos/test_video.mp4' %}" title="intro"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
         </div>
+
       </div>
-        </a>
-
-      <a href="/category/1/lesson/58949efb-6dfd-4302-af98-e57692fff245">
-        <div class="card shadow-sm category_card mx-4 my-2 " style="width: 10rem;">
-          <img src="{% static 'images/Demo.png' %}" class="card-img-top" alt="">
-          <div class="card-body">
-            <p class="card-text category_title text-center">Demo</p>
-          </div>
-        </div>
-      </a>
-
-    </div>
-    <div class="row justify-content-center mt-5 pt-5">
-      <h4>by <a class="name" href="https://github.com/abdullahMosibah">Abdullah Mosaibah</a>
-      </h4>
-
-      <!--
-      <h4><strong>This project is open sourced </strong><a href="https://github.com/abdullahMosibah/Meeting">Github
-        repo</a></h4>
-        -->
-    </div>
-  <div class="row justify-content-center mt-1">
-      <h6>amosaibah@cgine.app</h6>
-      <!--
-      <h4><strong>This project is open sourced </strong><a href="https://github.com/abdullahMosibah/Meeting">Github
-        repo</a></h4>
-        -->
     </div>
   </div>
+  <!-- -------------------------------------------------------- -->
+  <div class="container main-container">
+    <div class="hero-section row justify-content-between mt-2 mb-5 ">
+      <div class="col-lg-5 col-sm-12 align-self-center">
+        <h1 class="hero-title"><strong>CGINE.app</strong></h1>
+        <p class="text-start hero-description"> make receiving
+          information concise and self-paced</p>
+      </div>
+      <div class="col-lg-7 col-sm-12">
+        <img  class="hero-img" src="{% static 'images/hero.svg' %}" width="120%" alt="">
+      </div>
+    </div>
+
+    <div class=" info-section row justify-content-center mt-1">
+      <h1 class="text-center mt-5"><strong>What is <img src="{% static 'images/logo_black.svg' %}"
+                                                        width="110" alt=""> ?</strong></h1>
+      <p class="text-center one-liner">a new format to deliver educational material to make receiving
+        information concise and self-paced</p>
+
+
+      <button type="button" data-bs-toggle="modal" data-bs-target="#popup" id="popup_button" class=" button-outline">
+        Watch the
+        video
+      </button>
+
+
+    </div>
+    <div class="row justify-content-center mt-5 mb-5">
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+
+      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <p class="text-center text-break mt-4">
+          all rounded featues to do
+        </p>
+        <p class="text-center text-break detail">
+          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+      </div>
+    </div>
+  </div>
+  {% include 'footer.html' %}
 {% endblock content %}
+<a href="/category/1">
+  <div class="card shadow-sm category_card mx-4 my-2" style="width: 10rem;">
+    <img src="{% static 'images/saad_academy.jpg' %}" class="card-img-top" alt="">
+    <div class="card-body">
+      <p class="card-text category_title text-center">Saad Academy</p>
+    </div>
+  </div>
+</a>
+
+<a href="/category/1/lesson/58949efb-6dfd-4302-af98-e57692fff245">
+  <div class="card shadow-sm category_card mx-4 my-2 " style="width: 10rem;">
+    <img src="{% static 'images/Demo.png' %}" class="card-img-top" alt="">
+    <div class="card-body">
+      <p class="card-text category_title text-center">Demo</p>
+    </div>
+  </div>
+</a>

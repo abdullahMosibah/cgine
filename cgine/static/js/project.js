@@ -3,6 +3,7 @@ $(document).ready(function () {
 });
 
 let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
+let feature_boxes = document.querySelectorAll("#feature_box");
 let disclaimer = document.getElementById("disclaimer");
 //--------------------- info box pop-up-------------------------------
 // info keyword that is located inside the info box
@@ -14,6 +15,10 @@ let progressBar = document.getElementById('progress-bar');
 // the buttons in the info box.
 let googleBtn = document.getElementById("google_btn");
 let googleScholarBtn = document.getElementById("google_scholar_btn");
+let popup_button = document.getElementById("popup_button");
+popup_button.addEventListener('click', function (){
+    $('#popup').modal('show');
+})
 
 //----------------------------------------------------------------------
 function google_search(evt) {
@@ -49,6 +54,15 @@ text_in_knowledge_blocks.forEach(function (e) {
         populate_info_box(e.textContent);
         infoBox.classList.add("show");
 
+    })
+})
+
+feature_boxes.forEach(function (e){
+    e.addEventListener("mouseover", function (){
+        e.classList.add("shadow")
+    })
+    e.addEventListener("mouseout", function (){
+        e.classList.remove("shadow")
     })
 })
 
@@ -107,3 +121,5 @@ for (let i = 0; i <= playButtons.length; i++) {
         playButtons[i].textContent = "play";
     }, false);
 }
+
+

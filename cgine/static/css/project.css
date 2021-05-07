@@ -12,19 +12,46 @@
   border-color: #eed3d7;
 }
 
+/*
 body {
-   background-color: #E5EFC1;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+ */
+
+body {
+  background-color: #F3F7FB;
   font-family: 'Montserrat', sans-serif;
 }
-nav{
-  background-color:#39AEA9 ;
+
+
+
+nav {
+  background-color: #F3F7FB;
 }
-.text-container{
+
+.text-container {
   background-color: #e2e2e2;
 
 }
+
 .welcome {
-  color: #4c4c4c;
+  color: #17212A;
+
   text-align: center;
   width: 50%;
   font-size: 1.5em;
@@ -32,39 +59,54 @@ nav{
 
 p {
   font-size: 1.4em;
-  color: #243135;
+  color: #17212A;
+
 }
-.category_title{
-   font-size: 0.9em;
-  color: #243135;
+.feature{
+  font-size: 1em;
+  color: #17212A;
+}
+.detail{
+  font-size: 0.9em;
+  color: #64829D;
 }
 
-.header{
+.category_title {
+  font-size: 0.9em;
+  color: #17212A;
+
+}
+
+.header {
   background-color: #1B3149;
 }
 
-.index-element{
+.index-element {
   font-size: 1em;
 }
 
-.dis{
+.dis {
   font-size: 1em;
 }
 
-.index li{
+.index li {
   margin-bottom: -0.8em;
 }
-.name{
-  color: rgba(22, 160, 133, 1);;
+
+.name {
+  color:#68DEA6;
 }
 
-h1{
-  color: #243135;
+h1 {
+  color: #17212A;
+
 }
-.text-resource{
+
+.text-resource {
   font-size: 1.2em;
 
 }
+
 .green-highlight {
   background: rgba(22, 160, 133, 0.2);
   padding: 2px 2px;
@@ -86,6 +128,7 @@ h1{
   width: 18rem;
   height: 40%;
 }
+
 .resources {
   width: 18rem;
 
@@ -123,11 +166,79 @@ h1{
   font-size: 0.7em;
 }
 
-a{
-  color: #ffffff;
+a {
+  font-size: 1.2em;
+  color: #17212A;
 }
 
-.test_video{
+.hero-description {
+  font-size: 1.9em;
+}
+
+.hero-title {
+  font-size: 2.5em;
+}
+
+.test_video {
   width: 98%;
   height: 98%;
+}
+.one-liner{
+  font-size: 2em;
+}
+
+.button-outline{
+  border: 2px solid #17212A;
+  border-radius: 5px;
+  background-color:transparent ;
+  color: #17212A;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button-outline:hover{
+  background-color: #17212A;
+  color:#F3F7FB ;
+}
+.popup-modal{
+  background-color: transparent;
+
+}
+.modal-content-popup{
+    background-color: transparent;
+
+}
+
+.popup-video{
+  background-color: transparent;
+}
+.feature-box{
+  width: 20rem;
+  height: 15rem;
+}
+footer{
+  background-color: #17212A;
+  color:#F3F7FB ;
+}
+.navbar-toggler-icon{
+  border: #17212A;
+}
+
+@media (max-width: 575.98px) {
+  .hero-img{
+    width: 100%;
+    margin-top: 2em;
+  }
+  .hero-title{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 2.5em;
+  }
+  .hero-description{
+    text-align: center;
+    font-size: 1.8em;
+  }
+  .one-liner{
+    font-size: 1.8em;
+  }
 }

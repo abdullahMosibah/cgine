@@ -58,10 +58,12 @@ class knowledge_block(models.Model):
     # def __str__(self):
     @property
     def get_quiz(self):
-        return self.quiz.objects.all()
+        return self.quiz
+
 
 
 class quiz(models.Model):
     knowledge_block = models.ForeignKey(
         lesson, related_name="quiz", null=True, on_delete=models.CASCADE
     )
+
