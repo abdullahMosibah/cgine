@@ -223,6 +223,10 @@ footer{
 .navbar-toggler-icon{
   border: #17212A;
 }
+.testimonial{
+  font-size: 1.8em;
+  color:#64829D ;
+}
 
 @media (max-width: 575.98px) {
   .hero-img{
@@ -238,7 +242,5 @@ footer{
     text-align: center;
     font-size: 1.8em;
   }
-  .one-liner{
-    font-size: 1.8em;
-  }
+
 }
