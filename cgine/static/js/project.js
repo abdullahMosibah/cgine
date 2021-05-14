@@ -35,8 +35,12 @@ for (let i = 0; i <= playButtons.length; i++) {
         playButtons[i].textContent = "play";
     }, false);
 }
+
+
+
+
 let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
-let feature_boxes = document.querySelectorAll("#feature_box");
+
 let disclaimer = document.getElementById("disclaimer");
 //--------------------- info box pop-up-------------------------------
 // info keyword that is located inside the info box
@@ -49,6 +53,7 @@ let progressBar = document.getElementById('progress-bar');
 let googleBtn = document.getElementById("google_btn");
 let googleScholarBtn = document.getElementById("google_scholar_btn");
 let popup_button = document.getElementById("popup_button");
+
 popup_button.addEventListener('click', function (){
     $('#popup').modal('show');
 })
@@ -63,6 +68,8 @@ function google_scholar_search(evt) {
 
 }
 
+
+
 function populate_info_box(keyword) {
     infoKeyword.textContent = keyword;
     //listener for the google normal search
@@ -75,11 +82,13 @@ function populate_info_box(keyword) {
     window.addEventListener('click', function () {
         infoBox.classList.remove("show");
     })
-
     //googleBtn.removeEventListener("click", google_search(keyword));
-}
+
 
 // for each span that contains text
+
+}
+
 text_in_knowledge_blocks.forEach(function (e) {
     // double click event listener
     e.addEventListener("dblclick", function (f) {
@@ -87,15 +96,6 @@ text_in_knowledge_blocks.forEach(function (e) {
         populate_info_box(e.textContent);
         infoBox.classList.add("show");
 
-    })
-});
-
-feature_boxes.forEach(function (e){
-    e.addEventListener("mouseover", function (){
-        e.classList.add("shadow")
-    })
-    e.addEventListener("mouseout", function (){
-        e.classList.remove("shadow")
     })
 });
 
@@ -108,17 +108,4 @@ window.addEventListener('scroll', function () {
 
 
 
-
-let category_card = document.querySelectorAll(".category_card")
-
-for (let i = 0; i <= category_card.length; i++) {
-    category_card[i].addEventListener('mouseover', function () {
-        category_card[i].classList.remove("shadow-sm")
-        category_card[i].classList.add("shadow")
-    })
-    category_card[i].addEventListener('mouseout', function () {
-        category_card[i].classList.remove("shadow")
-        category_card[i].classList.add("shadow-sm")
-    })
-}
 
