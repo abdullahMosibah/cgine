@@ -24,7 +24,8 @@
         <h1 class="hero-title"><strong>CGINE.app</strong></h1>
         <p class="text-start hero-description"> make receiving
           information concise and self-paced</p>
-        <button type="button" onclick="window.location.href='#feature_box';" id="action_button" class="button-outline col-lg-2 col-sm-12 ">
+        <button type="button" onclick="window.location.href='#click_action';" id="action_button"
+                class="button-outline col-lg-2 col-sm-12 ">
           start
         </button>
       </div>
@@ -50,67 +51,61 @@
     <div class="row justify-content-center mt-5 mb-5">
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/learning.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          self-paced learning
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/concise.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          concise information
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/textbook.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          Text Book 2.0
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/engage.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          engaging
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/allinone.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          All in one
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
 
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
-        <img class="mx-auto d-block" src="{% static 'images/logo_black.svg' %} " width="100" alt="">
+        <img class="mx-auto d-block" src="{% static 'images/quiz.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
-          all rounded featues to do
+          Quizzes
         </p>
         <p class="text-center text-break detail">
-          dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         </p>
       </div>
     </div>
     <div class="row justify-content-center mt-5 mb-5">
-      <h1 class="text-center col-12 mt-5"><strong> see <img src="{% static 'images/logo_black.svg' %}"
+      <h1 class="text-center col-12 mt-5" id="click_action"><strong> see <img src="{% static 'images/logo_black.svg' %}"
                                                             width="110" alt=""> in action !</strong></h1>
       <p class="text-center col-12 testimonial">trusted by these partners</p>
 
@@ -135,7 +130,6 @@
   </div>
 
   <script>
-
 
     let feature_boxes = document.querySelectorAll("#feature_box");
     feature_boxes.forEach(function (e) {

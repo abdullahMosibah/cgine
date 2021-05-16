@@ -18,7 +18,8 @@
               <p class="text-start dis">🔍 double-click on highlighted text to search on google or google scholar</p>
             </li>
             <li>
-              <p class="text-start dis">🔊 click on play sound or play the video, to play instructor explaining the knowledge block</p>
+              <p class="text-start dis">🔊 click on play sound or play the video, to play instructor explaining the
+                knowledge block</p>
             </li>
           </ul>
         </div>
@@ -31,9 +32,9 @@
   </div>
   <!-- -------------------------------------------------------- -->
 
-
   <div class="sticky-top" id="progress-bar"></div>
   {% include "navbar.html" %}
+
 
   <!-- search modal helper -->
   <div id="info_box" class=" px-2 py-2  border rounded info shadow">
@@ -98,38 +99,99 @@
 
       <div class="col-10 main-content bg-secondary-">
         <h1 class="text-start mb-3">{{ lesson.title }}</h1>
-          {% for knowledge_block in lesson.get_knowledge_blocks %}
-        <div  class="row  knowledge-block">
-          <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
-            <audio crossorigin="anonymous" src="{{ knowledge_block.audio.url }}"
-                   class="test_audio"></audio>
-            <div class="row">
-              <div class="col-12">
-                <button data-playing="false" role="switch" aria-checked="false" type="button"
-                        class="play_button mb-2 btn btn-outline-info">Play
-                </button>
+        {% for knowledge_block in lesson.get_knowledge_blocks %}
+          <div class="row  knowledge-block">
+            <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+              <audio crossorigin="anonymous" src="{{ knowledge_block.audio.url }}"
+                     class="test_audio"></audio>
+              <div class="row">
+                <div class="col-12">
+                  <button data-playing="false" role="switch" aria-checked="false" type="button"
+                          class="play_button mb-2 btn btn-outline-info">Play
+                  </button>
+                </div>
+              </div>
+              <!-- the content is here -->
+              {{ knowledge_block.content|safe }}
+            </div>
+
+            <div class="col-2 mt-2">
+              <div class="border rounded shadow  video">
+                <video class="test_video" controls>
+                  <source src="{{ knowledge_block.video.url }}">
+                </video>
+              </div>
+              <div class="py-1 px-1 mt-1  border rounded shadow resources">
+                <p class="text-start mt-2">related resources</p>
+                <ul>
+                  {{ knowledge_block.resource|safe }}
+                </ul>
               </div>
             </div>
-         <!-- the content is here -->
-              {{ knowledge_block.content|safe }}
           </div>
-
-          <div class="col-2 mt-2">
-            <div class="border rounded shadow  video">
-              <video class="test_video" controls>
-                <source src="{{ knowledge_block.video.url }}">
-              </video>
-            </div>
-            <div class="py-1 px-1 mt-1  border rounded shadow resources">
-              <p class="text-start mt-2">related resources</p>
-              <ul>
-                {{ knowledge_block.resource|safe }}
-              </ul>
-            </div>
-          </div>
-        </div>
         {% endfor %}
       </div>
     </div>
   </div>
+  <script>
+
+
+    let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
+
+    let disclaimer = document.getElementById("disclaimer");
+    //--------------------- info box pop-up-------------------------------
+    // info keyword that is located inside the info box
+    let infoKeyword = document.getElementById("info_keyword");
+    // the actual info box
+    let infoBox = document.getElementById("info_box");
+    // progress bar effect reference
+    let progressBar = document.getElementById('progress-bar');
+    // the buttons in the info box.
+    let googleBtn = document.getElementById("google_btn");
+    let googleScholarBtn = document.getElementById("google_scholar_btn");
+
+
+    //----------------------------------------------------------------------
+    function google_search(evt) {
+      window.open(`https://www.google.com/search?q=${evt.target.myParam}`, '_blank');
+    }
+
+    function google_scholar_search(evt) {
+      window.open(`https://scholar.google.com/scholar?hl=en&as_sdt=0,5&q=${evt.target.myParam}`, "_blank");
+
+    }
+
+
+    function populate_info_box(keyword) {
+      infoKeyword.textContent = keyword;
+      //listener for the google normal search
+      googleBtn.addEventListener("click", google_search);
+      googleBtn.myParam = keyword;
+      //listener for the google scholar search.
+      googleScholarBtn.addEventListener('click', google_scholar_search);
+      googleScholarBtn.myParam = keyword;
+      // to make the info box disappear when clicked at any location at the document.
+      window.addEventListener('click', function () {
+        infoBox.classList.remove("show");
+      })
+      //googleBtn.removeEventListener("click", google_search(keyword));
+
+
+// for each span that contains text
+
+    }
+
+    text_in_knowledge_blocks.forEach(function (e) {
+      // double click event listener
+      e.addEventListener("dblclick", function (f) {
+        // to populate the info box + to make it appear when double clicked at any text.
+        populate_info_box(e.textContent);
+        infoBox.classList.add("show");
+
+      })
+    });
+
+
+  </script>
+
 {% endblock content %}

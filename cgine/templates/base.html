@@ -1,4 +1,5 @@
-{% load static i18n %}<!DOCTYPE html>
+{% load static i18n %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,53 +9,27 @@
   <meta name="description"
         content="cgine is a new format to deliver educational material to make receiving information concise and self-paced">
   <meta name="author" content="abdullah mosaibah">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R9WMDV5D3"></script>
-  <!-- TODO:change to production -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-8R9WMDV5D3');
-  </script>
   <link rel="icon" href="{% static 'images/logo_black.svg' %}">
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <![endif]-->
 
 
-  <!-- linking monserrat from google fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
   {% block css %}
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <!-- Your stuff: Third-party CSS libraries go here -->
-
-    <!-- This file stores project-specific CSS -->
-
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
-
 
   {% endblock %}
   <!-- Le javascript
   ================================================== -->
   {# Placed at the top of the document so pages load faster with defer #}
   {% block javascript %}
-
     <!-- Bootstrap JS and its dependencies-->
     <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -68,21 +43,29 @@
 
     <!-- Your stuff: Third-party javascript libraries go here -->
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8R9WMDV5D3"></script>
+    <!-- TODO:change to production -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-8R9WMDV5D3');
+    </script>
     <!-- place project specific Javascript in this file -->
 
     <script defer src="{% static 'js/project.js' %}"></script>
-
   {% endblock javascript %}
-
 </head>
 
 <body>
-
 {% block content %}
-
-
 {% endblock content %}
-
 </body>
 </html>
