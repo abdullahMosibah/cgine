@@ -13,7 +13,6 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
         </div>
-
       </div>
     </div>
   </div>
@@ -21,7 +20,7 @@
   <div class="container main-container">
     <div class="hero-section row justify-content-between mt-2 mb-5 ">
       <div class="col-lg-5 col-sm-12 align-self-center">
-        <h1 class="hero-title"><strong>CGINE.app</strong></h1>
+        <h1 class="hero-title"><strong>CGINE</strong></h1>
         <p class="text-start hero-description"> make receiving
           information concise and self-paced</p>
         <button type="button" onclick="window.location.href='#click_action';" id="action_button"
@@ -95,7 +94,7 @@
         </p>
       </div>
 
-      <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+      <div id="feature_box" class=" d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
         <img class="mx-auto d-block" src="{% static 'images/quiz.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
           Quizzes
@@ -117,6 +116,7 @@
           </div>
         </div>
       </a>
+      <!-- TODO: you can pass cetegories object and generate all category better than manually do it -->
       <a href="/category/1/lesson/58949efb-6dfd-4302-af98-e57692fff245">
         <div class="card shadow-sm category_card mx-4 my-2 " style="width: 13rem;">
           <img src="{% static 'images/Demo.png' %}" class="card-img-top" alt="">
@@ -128,32 +128,6 @@
 
     </div>
   </div>
-
-  <script>
-
-    let feature_boxes = document.querySelectorAll("#feature_box");
-    feature_boxes.forEach(function (e) {
-      e.addEventListener("mouseover", function () {
-        e.classList.add("shadow")
-      })
-      e.addEventListener("mouseout", function () {
-        e.classList.remove("shadow")
-      })
-    });
-    let category_card = document.querySelectorAll(".category_card")
-
-    for (let i = 0; i <= category_card.length; i++) {
-      category_card[i].addEventListener('mouseover', function () {
-        category_card[i].classList.remove("shadow-sm")
-        category_card[i].classList.add("shadow")
-      })
-      category_card[i].addEventListener('mouseout', function () {
-        category_card[i].classList.remove("shadow")
-        category_card[i].classList.add("shadow-sm")
-      })
-    }
-
-  </script>
   {% include 'footer.html' %}
 {% endblock content %}
 

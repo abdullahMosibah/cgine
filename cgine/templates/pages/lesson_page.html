@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% load static i18n %}{% block content %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
   <!-- the welcoming modal -->
   <div class="modal fade" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -33,7 +34,7 @@
   <!-- -------------------------------------------------------- -->
 
   <div class="sticky-top" id="progress-bar"></div>
-  {% include "navbar.html" %}
+  {% include "navbar-shadow.html" %}
 
 
   <!-- search modal helper -->
@@ -45,96 +46,135 @@
   </div>
   <!-- --------------------- -->
 
+  <div id="lesson_app">
+    <div class="container mt-3">
+      <div class="row main-row">
+        <!-- the index----------------------- -->
+        <div class="col-lg-2 col-sm-12 ">
+          <ol class="sticky-top py-3 shadow-md index">
+            <li>
+              <a href="#one"><p class="text-break index-element">asdsadsad</p></a>
+            </li>
+            <li>
+              <a href="#two"><p class="text-break index-element">Objectives</p></a>
+            </li>
+            <li>
+              <a href="#three"><p class="text-break index-element">Interaction Design</p></a>
+            </li>
+            <li>
+              <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
+            </li>
+            <li>
+              <a href="#five"><p class="text-break index-element">Bad design</p></a>
+            </li>
+            <li>
+              <a href="#seven"><p class="text-break index-element">Good Design</p></a>
+            </li>
+            <li>
+              <a href="#eight"><p class="text-break index-element">users' needs</p></a>
+            </li>
+            <li>
+              <a href="#nine"><p class="text-break index-element">definition</p></a>
+            </li>
+            <li>
+              <a href="#ten"><p class="text-break index-element">Goals of interaction Design</p></a>
+            </li>
+            <li>
+              <a href="#eleven"><p class="text-break index-element">Design</p></a>
+            </li>
+            <li>
+              <a href="#twelve"><p class="text-break index-element">Working in multidisciplinary teams</p></a>
+            </li>
+            <li>
+              <a href="#thirteen"><p class="text-break index-element">Interaction design in business</p></a>
+            </li>
+            <li>
+              <a href="#fourteen"><p class="text-break index-element">THE birth of HCI</p></a>
+            </li>
+            <li>
+              <a href="#sixteen"><p class="text-break index-element">WHY?</p></a>
+            </li>
+          </ol>
+        </div>
 
-  <div class="container mt-3">
-    <div class="row main-row">
-      <!-- the index----------------------- -->
-      <div class="col-2   bg-primary- ">
-        <ul class="sticky-top index">
-          <li>
-            <a href="#one"><p class="text-break index-element">introduction</p></a>
-          </li>
-          <li>
-            <a href="#two"><p class="text-break index-element">Objectives</p></a>
-          </li>
-          <li>
-            <a href="#three"><p class="text-break index-element">Interaction Design</p></a>
-          </li>
-          <li>
-            <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
-          </li>
-          <li>
-            <a href="#five"><p class="text-break index-element">Bad design</p></a>
-          </li>
-          <li>
-            <a href="#seven"><p class="text-break index-element">Good Design</p></a>
-          </li>
-          <li>
-            <a href="#eight"><p class="text-break index-element">users' needs</p></a>
-          </li>
-          <li>
-            <a href="#nine"><p class="text-break index-element">definition</p></a>
-          </li>
-          <li>
-            <a href="#ten"><p class="text-break index-element">Goals of interaction Design</p></a>
-          </li>
-          <li>
-            <a href="#eleven"><p class="text-break index-element">Design</p></a>
-          </li>
-          <li>
-            <a href="#twelve"><p class="text-break index-element">Working in multidisciplinary teams</p></a>
-          </li>
-          <li>
-            <a href="#thirteen"><p class="text-break index-element">Interaction design in business</p></a>
-          </li>
-          <li>
-            <a href="#fourteen"><p class="text-break index-element">THE birth of HCI</p></a>
-          </li>
-          <li>
-            <a href="#sixteen"><p class="text-break index-element">WHY?</p></a>
-          </li>
-        </ul>
-      </div>
 
+        <div class="col-lg-10 col-sm-12 main-content bg-secondary-">
+          <h1 class="text-start mb-3">{{ lesson.title }}</h1>
+          <!-- the knowledge block -->
+          {% for knowledge_block in lesson.get_knowledge_blocks %}
 
-      <div class="col-10 main-content bg-secondary-">
-        <h1 class="text-start mb-3">{{ lesson.title }}</h1>
-        {% for knowledge_block in lesson.get_knowledge_blocks %}
-          <div class="row  knowledge-block">
-            <div class=" text-container col-8   my-1  px-2 py-2 border shadow rounded">
+            <button data-playing="false" role="switch" aria-checked="false" type="button"
+                    class="play_button shadow"><strong>Play</strong>
+            </button>
+            <div class="row knowledge-block shadow-lg mb-4  px-2 py-2">
+              <!-- audio addition to html -->
+
               <audio crossorigin="anonymous" src="{{ knowledge_block.audio.url }}"
                      class="test_audio"></audio>
-              <div class="row">
-                <div class="col-12">
-                  <button data-playing="false" role="switch" aria-checked="false" type="button"
-                          class="play_button mb-2 btn btn-outline-info">Play
+              <!--                        -->
+              <div class="col-12 pt-4  ">
+
+                <video class="border rounded shadow  video float-right " controls>
+                  <source src="{{ knowledge_block.video.url }}">
+                </video>
+
+                <div class="row">
+                  <p class="kb_title"><strong>{{ knowledge_block.title }}</strong></p>
+                </div>
+                <!-- the content is here -->
+                {{ knowledge_block.content|safe }}
+              </div>
+              <div class="col-12">
+                <div class="row justify-content-end pb-4">
+                  <button v-on:click="showGlossary = !showGlossary" class="dropdown_button shadow mr-3"><span
+                          class="divider mr-1"> </span> Glossary
+                  </button>
+                  <button v-on:click="showResources = !showResources" class="dropdown_button px-2 py-2 shadow mr-3">
+                    <span class="divider mr-1"> </span> Related
+                    resources
                   </button>
                 </div>
               </div>
-              <!-- the content is here -->
-              {{ knowledge_block.content|safe }}
-            </div>
-
-            <div class="col-2 mt-2">
-              <div class="border rounded shadow  video">
-                <video class="test_video" controls>
-                  <source src="{{ knowledge_block.video.url }}">
-                </video>
+              <div class="col-12">
+                <div class="row justify-content-between">
+                  <transition name="dropdown">
+                    <div v-if="showGlossary" class="col-8">
+                      <p class="text-break" id="{{ knowledge_block.id }}" >
+                        asdsadsadsadsadsadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                    </div>
+                  </transition>
+                  <transition name="dropdown">
+                    <div v-if="showResources" class="col-4">
+                      <p class="text-break">
+                        asdsadsadsadsadsadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                    </div>
+                  </transition>
+                </div>
               </div>
-              <div class="py-1 px-1 mt-1  border rounded shadow resources">
-                <p class="text-start mt-2">related resources</p>
-                <ul>
-                  {{ knowledge_block.resource|safe }}
-                </ul>
-              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+          <!-- end of knowledge block -->
+        </div>
       </div>
     </div>
   </div>
+
+
   <script>
 
+
+    var lesson_app = new Vue({
+      el: "#lesson_app",
+      delimiters: ["[[", "]]"],
+      data: {
+        showGlossary: false,
+        showResources: false,
+      },
+
+
+      methods: {}
+
+    })
 
     let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
 

@@ -46,6 +46,7 @@ class lesson(models.Model):
 
 
 class knowledge_block(models.Model):
+    title = models.CharField(max_length=100,default="new knowledge Block",null=True)
     lesson = models.ForeignKey(
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )

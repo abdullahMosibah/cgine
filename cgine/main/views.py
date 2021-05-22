@@ -31,6 +31,3 @@ def category_view(request, category_id):
         request=request, context=context, template_name="pages/category_page.html"
     )
 
-def vue_test(request):
-
-    return  render(request=request, template_name="pages/vue_test.html")

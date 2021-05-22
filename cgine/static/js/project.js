@@ -1,4 +1,3 @@
-
 let playButtons = document.querySelectorAll(".play_button");
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
@@ -8,6 +7,7 @@ let test_audios = document.querySelectorAll(".test_audio");
 for (let i = 0; i <= playButtons.length; i++) {
     let track = audioContext.createMediaElementSource(test_audios[i]);
     track.connect(audioContext.destination);
+
     playButtons[i].addEventListener("click", function (e) {
 
         // check if context is in suspended state (autoplay policy)
@@ -21,7 +21,7 @@ for (let i = 0; i <= playButtons.length; i++) {
         } else if (this.dataset.playing === "true") {
             test_audios[i].pause();
             this.dataset.playing = "false";
-            playButtons[i].textContent = "play";
+            playButtons[i].textContent =  "play";
         }
     }, false);
     test_audios[i].addEventListener('ended', function () {
@@ -29,17 +29,6 @@ for (let i = 0; i <= playButtons.length; i++) {
         playButtons[i].textContent = "play";
     }, false);
 }
-/* progress bar effect reference
-  let progressBar = document.getElementById("progress-bar");
-
-
-    // to add  the percentage progressBar effect
-    window.addEventListener('scroll', function () {
-      let max = document.body.scrollHeight - innerHeight;
-      progressBar.style.width = `${(pageYOffset / max) * 100}%`;
-    });
-
- */
 
 
 
