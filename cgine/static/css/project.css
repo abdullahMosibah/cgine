@@ -3,6 +3,10 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .alert-debug {
   color: black;
   background-color: white;
@@ -42,11 +46,21 @@ body {
 }
 
 
-nav {
+.navbar-shadow {
+  background-color: #ffffff;
+}
+
+.navbar {
   background-color: #F3F7FB;
+
 }
 
 .knowledge-block {
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.auth_box {
   border-radius: 20px;
   background-color: #ffffff;
 }
@@ -117,6 +131,7 @@ p {
 }
 
 .index-element {
+
   font-size: 0.8em;
 }
 
@@ -125,7 +140,7 @@ p {
   font-size: 1em;
 }
 
-.index{
+.index {
   border-radius: 20px;
   background-color: #ffffff;
 
@@ -365,6 +380,3 @@ vue animation option1: fade, option2: dropdown
   transition: all 0.4s ease-out;
   transform-origin: top center;
 }
-
-
-

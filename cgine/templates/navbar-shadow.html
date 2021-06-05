@@ -1,10 +1,7 @@
 {% load static i18n %}
-<nav class="navbar navbar-expand-md shadow mb-5">
-
+<nav class="navbar navbar-shadow navbar-expand-md shadow mb-5">
   <div class="container">
-
-    <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{% static 'images/logo_black.svg' %}"
-                                                               width="110"></a>
+    <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{% static 'images/logo_black.svg' %}" width="110"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -20,7 +17,6 @@
           {# URL provided by django-allauth/account/urls.py #}
           <a class="nav-link pr-3" href="{% url 'main:home' %}"> <strong>Products</strong></a>
         </li>
-
         {% if request.user.is_authenticated %}
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}
@@ -44,16 +40,7 @@
             <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}"> <strong>Sign In</strong></a>
           </li>
         {% endif %}
-
       </ul>
-
     </div>
-
   </div>
-
 </nav>
-
-<script>
-
-
-</script>

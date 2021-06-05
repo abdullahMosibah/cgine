@@ -2,7 +2,6 @@ import uuid
 
 # from ckeditor.fields import RichTextField
 from django.db import models
-from django.urls import reverse
 
 
 class category(models.Model):
@@ -44,9 +43,8 @@ class lesson(models.Model):
         return f"/category/{self.category_id}/lesson/{self.id}"
 
 
-
 class knowledge_block(models.Model):
-    title = models.CharField(max_length=100,default="new knowledge Block",null=True)
+    title = models.CharField(max_length=100, default="new knowledge Block", null=True)
     lesson = models.ForeignKey(
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
@@ -55,16 +53,21 @@ class knowledge_block(models.Model):
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)
     resource = models.TextField()
+    glossary = models.TextField(null=True)
 
-    # def __str__(self):
+    def __str__(self):
+        return self.title
+
     @property
-    def get_quiz(self):
-        return self.quiz
+    def get_titles(self):
+        return self.title
 
+    def get_quiz(self):
+        return self.quiz.all()
 
 
 class quiz(models.Model):
     knowledge_block = models.ForeignKey(
         lesson, related_name="quiz", null=True, on_delete=models.CASCADE
     )
-
+    question = models.CharField(max_length=400)

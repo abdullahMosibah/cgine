@@ -51,49 +51,12 @@
         <!-- the index----------------------- -->
         <div class="col-lg-2 col-sm-12 ">
           <ol class="sticky-top py-3 shadow-md index">
+            {% for knowledge_block in lesson.get_knowledge_blocks %}
             <li>
-              <a href="#one"><p class="text-break index-element">asdsadsad</p></a>
+            <!--onclick="window.location.href='#{{ knowledge_block.id }}';"-->
+              <a href="#{{ knowledge_block.id }}" ><p class="text-break index-element">{{ knowledge_block.title }}</p></a>
             </li>
-            <li>
-              <a href="#two"><p class="text-break index-element">Objectives</p></a>
-            </li>
-            <li>
-
-              <a href="#three"><p class="text-break index-element">Interaction Design</p></a>
-            </li>
-            <li>
-              <a href="#four"><p class="text-break index-element">Aim of interaction Design</p></a>
-            </li>
-            <li>
-              <a href="#five"><p class="text-break index-element">Bad design</p></a>
-            </li>
-            <li>
-              <a href="#seven"><p class="text-break index-element">Good Design</p></a>
-            </li>
-            <li>
-              <a href="#eight"><p class="text-break index-element">users' needs</p></a>
-            </li>
-            <li>
-              <a href="#nine"><p class="text-break index-element">definition</p></a>
-            </li>
-            <li>
-              <a href="#ten"><p class="text-break index-element">Goals of interaction Design</p></a>
-            </li>
-            <li>
-              <a href="#eleven"><p class="text-break index-element">Design</p></a>
-            </li>
-            <li>
-              <a href="#twelve"><p class="text-break index-element">Working in multidisciplinary teams</p></a>
-            </li>
-            <li>
-              <a href="#thirteen"><p class="text-break index-element">Interaction design in business</p></a>
-            </li>
-            <li>
-              <a href="#fourteen"><p class="text-break index-element">THE birth of HCI</p></a>
-            </li>
-            <li>
-              <a href="#sixteen"><p class="text-break index-element">WHY?</p></a>
-            </li>
+            {% endfor %}
           </ol>
         </div>
 
@@ -106,7 +69,7 @@
             <button data-playing="false" role="switch" aria-checked="false" type="button"
                     class="play_button shadow"><strong>Play</strong>
             </button>
-            <div class="row knowledge-block shadow-lg mb-4  px-2 py-2">
+            <div id="{{ knowledge_block.id }}" class="row knowledge-block shadow-lg mb-4  px-2 py-2">
               <!-- audio addition to html -->
 
               <audio crossorigin="anonymous" src="{{ knowledge_block.audio.url }}"
@@ -125,7 +88,7 @@
                 {{ knowledge_block.content|safe }}
               </div>
               <div class="col-12">
-                <div class="row justify-content-end pb-4">
+                <div class="row justify-content-end pb-4 mt-4">
                   <button v-on:click="showGlossary = !showGlossary" class="dropdown_button shadow mr-3"><span
                           class="divider mr-1"> </span> Glossary
                   </button>
@@ -140,13 +103,13 @@
                   <transition name="dropdown">
                     <div v-if="showGlossary" class="col-8">
                       <p class="text-break" id="{{ knowledge_block.id }}" >
-                        asdsadsadsadsadsadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                          {{ knowledge_block.glossary }}</p>
                     </div>
                   </transition>
                   <transition name="dropdown">
                     <div v-if="showResources" class="col-4">
                       <p class="text-break">
-                        asdsadsadsadsadsadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        {{ knowledge_block.resource }}</p>
                     </div>
                   </transition>
                 </div>
@@ -159,7 +122,7 @@
     </div>
   </div>
 
-
+  {% include 'footer.html' %}
   <script>
 
 

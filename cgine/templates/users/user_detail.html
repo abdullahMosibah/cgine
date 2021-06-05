@@ -1,14 +1,14 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 {% load static %}
 
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
   {% include "navbar.html" %}
-<div class="container">
+<div class="container auth_box shadow-lg py-5 px-5">
 
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12">~
 
       <h2>{{ object.username }}</h2>
       {% if object.name %}
