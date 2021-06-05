@@ -60,6 +60,11 @@ body {
   background-color: #ffffff;
 }
 
+.quiz {
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
 .auth_box {
   border-radius: 20px;
   background-color: #ffffff;

@@ -46,16 +46,17 @@
   <!-- --------------------- -->
 
   <div id="lesson_app">
-    <div class="container mt-3">
+    <div class="container mt-4">
       <div class="row main-row">
         <!-- the index----------------------- -->
         <div class="col-lg-2 col-sm-12 ">
           <ol class="sticky-top py-3 shadow-md index">
             {% for knowledge_block in lesson.get_knowledge_blocks %}
-            <li>
-            <!--onclick="window.location.href='#{{ knowledge_block.id }}';"-->
-              <a href="#{{ knowledge_block.id }}" ><p class="text-break index-element">{{ knowledge_block.title }}</p></a>
-            </li>
+              <li>
+                <!--onclick="window.location.href='#{{ knowledge_block.id }}';"-->
+                <a href="#{{ knowledge_block.id }}"><p class="text-break index-element">{{ knowledge_block.title }}</p>
+                </a>
+              </li>
             {% endfor %}
           </ol>
         </div>
@@ -102,8 +103,8 @@
                 <div class="row justify-content-between">
                   <transition name="dropdown">
                     <div v-if="showGlossary" class="col-8">
-                      <p class="text-break" id="{{ knowledge_block.id }}" >
-                          {{ knowledge_block.glossary }}</p>
+                      <p class="text-break" id="{{ knowledge_block.id }}">
+                        {{ knowledge_block.glossary }}</p>
                     </div>
                   </transition>
                   <transition name="dropdown">
@@ -115,6 +116,14 @@
                 </div>
               </div>
             </div>
+            {% for quiz in knowledge_block.get_quiz %}
+              <div class=" row quiz shadow-lg mb-4  px-2 py-2">
+                {% for question in quiz.get_questions %}
+                  <p>{{ question.content }}</p>
+                {% endfor %}
+              </div>
+            {% endfor %}
+
           {% endfor %}
           <!-- end of knowledge block -->
         </div>
