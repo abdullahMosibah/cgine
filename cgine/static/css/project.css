@@ -75,16 +75,53 @@ body {
   background: #ffffff;
   border: #ffffff;
   border-radius: 10px;
-
 }
+
+.quiz-choice {
+  width: 100%;
+  font-size: 1.6em;
+  background: #ffffff;
+  border: #ffffff;
+  border-radius: 10px;
+}
+
+.wrong-choice {
+    width: 100%;
+
+  color: #cc0000;
+  font-size: 1.6em;
+  background: #F3F7FB;
+  border: #cc0000;
+  border-radius: 10px;
+}
+.right-choice {
+    width: 100%;
+
+  color: #ffffff;
+  font-size: 1.6em;
+  background: #68DEA6;
+  border-radius: 10px;
+}
+
 
 .dropdown_button:hover {
   background: #F3F7FB;
 }
 
+.quiz-choice:hover {
+  background: #F3F7FB;
+}
+
+
 .divider {
   border-left: 3px solid #68DEA6;
   border-radius: 10%;
+}
+
+.horizontal-divider {
+  border-top: 3px solid #17212A;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .play_button {
@@ -187,6 +224,12 @@ h1 {
 
 
 .kb_title {
+  color: #17212A;
+  font-size: 1.9em;
+
+}
+
+.quiz-title {
   color: #17212A;
   font-size: 1.9em;
 

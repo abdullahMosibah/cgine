@@ -117,9 +117,28 @@
               </div>
             </div>
             {% for quiz in knowledge_block.get_quiz %}
-              <div class=" row quiz shadow-lg mb-4  px-2 py-2">
+              <div class=" row quiz shadow-lg mb-4  px-3 py-3">
+                <img class="mx-1" width="50rem" height="50rem" src="{% static 'images/play-quiz.png' %}">
+                <h1 class="text-start quiz-title mb-3"><strong>quiz yourself</strong></h1>
+                <span class=" mb-2 mt-2 horizontal-divider"></span>
                 {% for question in quiz.get_questions %}
-                  <p>{{ question.content }}</p>
+                  <div class="col-12">
+                    <h1 class="text-start quiz-title  text-break mb-3">{{ question.content }}</h1>
+                  </div>
+                  {% for choice in question.get_choices %}
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                      <div id="no{{ choice.id }}"
+                           v-on:click="check('no{{ choice.id }}','{{ choice.content }}','{{ choice.is_correct }}');"
+                           class="quiz-choice shadow mr-3 px-4">
+                        <div class="row justify-content-start">
+                          <img class="mx-1" width="50rem" height="50rem" src="{% static 'images/play-quiz.png' %}">
+                          {{ choice.content }}
+
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+
                 {% endfor %}
               </div>
             {% endfor %}
@@ -134,7 +153,6 @@
   {% include 'footer.html' %}
   <script>
 
-
     var lesson_app = new Vue({
       el: "#lesson_app",
       delimiters: ["[[", "]]"],
@@ -144,7 +162,19 @@
       },
 
 
-      methods: {}
+      methods: {
+        check: function (id, content, value) {
+          let choice_id = document.getElementById(id);
+          if (value === "False") {
+            choice_id.classList.toggle("wrong-choice")
+            choice_id.classList.toggle("quiz-choice")
+
+          } else {
+            choice_id.classList.toggle("right-choice")
+            choice_id.classList.toggle("quiz-choice")
+          }
+        },
+      }
 
     })
 
