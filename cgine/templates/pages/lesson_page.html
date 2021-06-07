@@ -47,9 +47,9 @@
 
   <div id="lesson_app">
     <div class="container mt-4">
-      <div class="row main-row">
+      <div class="row main-row ">
         <!-- the index----------------------- -->
-        <div class="col-lg-2 col-sm-12 ">
+        <div class="col-lg-2 col-sm-12">
           <ol class="sticky-top py-3 shadow-md index">
             {% for knowledge_block in lesson.get_knowledge_blocks %}
               <li>
@@ -62,8 +62,9 @@
         </div>
 
 
-        <div class="col-lg-10 col-sm-12 main-content bg-secondary-">
-          <h1 class="text-start mb-3">{{ lesson.title }}</h1>
+        <div class="col-lg-10 col-sm-12 main-content  bg-secondary-">
+          <h1 class="text-start mb-1">{{ lesson.title }}</h1>
+          <h5 style="color: #64829D" class="text-start ">{{ lesson.time_added }}</h5>
           <!-- the knowledge block -->
           {% for knowledge_block in lesson.get_knowledge_blocks %}
 
@@ -93,7 +94,8 @@
                   <button v-on:click="showGlossary = !showGlossary" class="dropdown_button shadow mr-3"><span
                           class="divider mr-1"> </span> Glossary
                   </button>
-                  <button v-on:click="showResources = !showResources" class="dropdown_button px-2 py-2 shadow mr-3">
+                  <button v-on:click="showResources = !showResources"
+                          class="dropdown_button px-2 py-2 shadow mr-3 mt-2">
                     <span class="divider mr-1"> </span> Related
                     resources
                   </button>
@@ -102,13 +104,13 @@
               <div class="col-12">
                 <div class="row justify-content-between">
                   <transition name="dropdown">
-                    <div v-if="showGlossary" class="col-8">
+                    <div v-if="showGlossary" class="col-lg-8 col-sm-12">
                       <p class="text-break" id="{{ knowledge_block.id }}">
                         {{ knowledge_block.glossary }}</p>
                     </div>
                   </transition>
                   <transition name="dropdown">
-                    <div v-if="showResources" class="col-4">
+                    <div v-if="showResources" class="col-lg-3 col-sm-12 ">
                       <p class="text-break">
                         {{ knowledge_block.resource }}</p>
                     </div>
@@ -131,9 +133,9 @@
                            v-on:click="check('no{{ choice.id }}','{{ choice.content }}','{{ choice.is_correct }}');"
                            class="quiz-choice shadow mr-3 px-4">
                         <div class="row justify-content-start">
-                          <img class="mx-1" width="50rem" height="50rem" src="{% static 'images/play-quiz.png' %}">
+                          <img id="no{{ choice.id }}pic" class="mx-1" width="50rem" height="50rem"
+                               src="{% static 'images/select.png' %}">
                           {{ choice.content }}
-
                         </div>
                       </div>
                     </div>
@@ -145,6 +147,8 @@
 
           {% endfor %}
           <!-- end of knowledge block -->
+          <h5 style="color: #64829D" class="text-center ">DONE !</h5>
+
         </div>
       </div>
     </div>
@@ -165,13 +169,15 @@
       methods: {
         check: function (id, content, value) {
           let choice_id = document.getElementById(id);
+          let pic = document.getElementById(id + 'pic');
           if (value === "False") {
-            choice_id.classList.toggle("wrong-choice")
+            choice_id.classList.add("wrong-choice")
             choice_id.classList.toggle("quiz-choice")
-
+            pic.src = "{% static 'images/false.png' %}"
           } else {
-            choice_id.classList.toggle("right-choice")
-            choice_id.classList.toggle("quiz-choice")
+            choice_id.classList.add("right-choice")
+            choice_id.classList.remove("quiz-choice")
+            pic.src = "{% static 'images/true.png' %}"
           }
         },
       }

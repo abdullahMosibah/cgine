@@ -274,21 +274,17 @@ h1 {
   position: fixed;
   visibility: hidden;
   z-index: 1;
-  top: 40%;
-  left: 55%;
+  left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+
+
 }
 
 .show {
   visibility: visible;
 }
 
-#progress-bar {
-  height: 5px;
-  background-color: #F4837D;
-  width: 0;
-  position: fixed;
-
-}
 
 .search_keyword {
   font-size: 1em;
