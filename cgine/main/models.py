@@ -66,7 +66,7 @@ class knowledge_block(models.Model):
    # def get_quiz(self):
      #   return self.quiz.all()
 
-'''
+
 class quiz(models.Model):
     knowledge_block = models.ForeignKey(
         knowledge_block, related_name="quiz", null=True, on_delete=models.CASCADE
@@ -108,5 +108,5 @@ class choice(models.Model):
 
 
 # 1 lesson => m knowledgeBlocks --> 1 quiz --> m questions
-m = multiple
-'''
+#m = multiple
+
