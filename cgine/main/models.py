@@ -63,8 +63,8 @@ class knowledge_block(models.Model):
     def get_titles(self):
         return self.title
 
-   # def get_quiz(self):
-     #   return self.quiz.all()
+    def get_quiz(self):
+        return self.quiz.all()
 
 
 class quiz(models.Model):
