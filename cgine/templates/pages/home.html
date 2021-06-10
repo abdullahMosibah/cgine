@@ -20,35 +20,115 @@
   <div class="container main-container">
     <div class="hero-section row justify-content-between mt-2 mb-5 ">
       <div class="col-lg-5 col-sm-12 align-self-center">
+
         <h1 class="hero-title"><strong>CGINE</strong></h1>
         <p class="text-start hero-description"> make receiving
           information concise and self-paced</p>
-        <button type="button" onclick="window.location.href='#click_action';" id="action_button"
-                class="button-outline col-lg-2 col-sm-12 ">
-          start
-        </button>
+
+
+        <div class="px-3 row action- justify-content-start ">
+          <button type="button" onclick="window.location.href='#click_action';" id="action_button"
+                  class="button-primary col-sm-12 col-lg-3 mr-1 mt-1">
+            Start
+          </button>
+          <button type="button" id="action_button"
+                  class="button-outline  col-sm-12 col-lg-3 mt-1">
+            Demo
+          </button>
+        </div>
       </div>
       <div class="col-lg-7 col-sm-12">
         <img class="hero-img" src="{% static 'images/hero.svg' %}" width="120%" alt="">
       </div>
     </div>
 
-    <div class=" info-section row justify-content-center mt-1">
+    <div class="info-section  row justify-content-center mt-1">
       <h1 class="text-center mt-5"><strong>What is <img src="{% static 'images/logo_black.svg' %}"
                                                         width="110" alt=""> ?</strong></h1>
-      <p class="text-center one-liner">a new format to deliver educational material to make receiving
-        information concise and self-paced</p>
+      <p class="text-center one-liner">Platform that enables online-learners
+        receive educational material in a concise
+        and self-paced form. </p>
 
-
+      <!-- TODO: add wisita video here -->
       <button type="button" data-bs-toggle="modal" data-bs-target="#popup" id="popup_button" class=" button-outline">
-        Watch the
-        video
+        Walk-through video
       </button>
 
 
     </div>
-    <div class="row justify-content-center mt-5 mb-5">
+    <div class="row features-container justify-content-center mt-5 mb-5">
 
+      <div class="row  justify-content-center">
+        <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
+          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
+          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
+            <strong>knowledge
+              block</strong> ? </p>
+          <p class="text-description text-center text-break">
+            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
+            better understand in-hand subject</p>
+        </div>
+        <div class="col-lg-6 col-sm-12  align-self-center">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
+      </div>
+
+      <div class="row  justify-content-center mt-5">
+        <div class="col-lg-6 col-sm-12  align-self-center">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
+        <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
+          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
+          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
+            <strong>knowledge
+              block</strong> ? </p>
+          <p class="text-description text-center text-break">
+            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
+            better understand in-hand subject</p>
+        </div>
+
+      </div>
+
+      <div class="row  justify-content-center mt-5">
+        <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
+          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
+          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
+            <strong>knowledge
+              block</strong> ? </p>
+          <p class="text-description text-center text-break">
+            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
+            better understand in-hand subject</p>
+        </div>
+        <div class="col-lg-6 col-sm-12  align-self-center">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
+      </div>
+
+      <div class="row  justify-content-center mt-5">
+        <div class="col-lg-6 col-sm-12  align-self-center">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
+        <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
+          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
+          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
+            <strong>knowledge
+              block</strong> ? </p>
+          <p class="text-description text-center text-break">
+            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
+            better understand in-hand subject</p>
+        </div>
+
+      </div>
+
+      <!--
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
         <img class="mx-auto d-block" src="{% static 'images/learning.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
@@ -94,7 +174,8 @@
         </p>
       </div>
 
-      <div id="feature_box" class=" d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
+      <div id="feature_box"
+           class=" d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
         <img class="mx-auto d-block" src="{% static 'images/quiz.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
           Quizzes
@@ -102,10 +183,13 @@
         <p class="text-center text-break detail">
         </p>
       </div>
+
+      -->
     </div>
     <div class="row justify-content-center mt-5 mb-5">
       <h1 class="text-center col-12 mt-5" id="click_action"><strong> see <img src="{% static 'images/logo_black.svg' %}"
-                                                            width="110" alt=""> in action !</strong></h1>
+                                                                              width="110" alt=""> in action !</strong>
+      </h1>
       <p class="text-center col-12 testimonial">trusted by these partners</p>
 
       <a href="/category/1">
