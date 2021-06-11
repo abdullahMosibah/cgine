@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% load static i18n %}{% block content %}
   {% include 'navbar.html' %}
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <!-- the popup modal -->
   <div class="modal fade popup-modal" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
        aria-hidden="true">
@@ -60,13 +60,13 @@
 
       <div class="row  justify-content-center">
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
-          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
+          <p class="feature-title text-center"><strong>knowledge blocks</strong></p>
           <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
             <strong>knowledge
               block</strong> ? </p>
           <p class="text-description text-center text-break">
             think of it as a slide that contains some related information. it's a simple way to organize knowledge to
-            better understand in-hand subject</p>
+            better understand the lesson</p>
         </div>
         <div class="col-lg-6 col-sm-12  align-self-center">
           <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
@@ -82,26 +82,23 @@
           </video>
         </div>
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
-          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
-          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
-            <strong>knowledge
-              block</strong> ? </p>
+          <p class="feature-title text-center"><strong>Text,Video and Audio material</strong></p>
+          <p class="text-description text-center text mt-4">each knowledge block contains 3 types of content
+            <strong>Text, Video</strong>, and <strong>audio</strong></p>
           <p class="text-description text-center text-break">
-            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
-            better understand in-hand subject</p>
+            to enhance understanding and learning. all those three types are synced together to create an interactive
+            learning experience.</p>
         </div>
 
       </div>
 
       <div class="row  justify-content-center mt-5">
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
-          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
-          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
-            <strong>knowledge
-              block</strong> ? </p>
+          <p class="feature-title text-center"><strong>Quick google/google scholar search shortcuts</strong></p>
+          <p class="text-description text-center text mt-4">by double-clicking on any highlighted text </p>
           <p class="text-description text-center text-break">
-            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
-            better understand in-hand subject</p>
+            you can either search that text on google or google scholar and play the related video/audio part that
+            explains it</p>
         </div>
         <div class="col-lg-6 col-sm-12  align-self-center">
           <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
@@ -117,18 +114,23 @@
           </video>
         </div>
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
-          <p class="feature-title text-center"><strong>creat knowledge blocks</strong></p>
-          <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
-            <strong>knowledge
-              block</strong> ? </p>
+          <p class="feature-title text-center"><strong>Quizzes</strong></p>
+          <p class="text-description text-center text mt-4">after any knowledge block you can add a quiz in order to
+            examine yourself </p>
           <p class="text-description text-center text-break">
-            think of it as a slide that contains some related information. it's a simple way to organize knowledge to
-            better understand in-hand subject</p>
+            this way you learn actively rather than passively, which will ultimately enhance your learning
+            experience </p>
         </div>
-
       </div>
+    </div>
 
-      <!--
+    <div class="row features-container justify-content-center mt-5 mb-5">
+      <img alt="comapre" class=" mx-auto d-block img-fluid" src="{% static 'images/compare.svg' %}">
+    </div>
+
+    <div class="row features-container justify-content-center mt-5 mb-5">
+      <h1 class=" col-12 text-center mt-5"><strong>is <img src="{% static 'images/logo_black.svg' %}"
+                                                           width="110" alt=""> right for me ?</strong></h1>
       <div id="feature_box" class="d-flex flex-column feature-box   rounded justify-content-center col-lg-4 col-sm-12 ">
         <img class="mx-auto d-block" src="{% static 'images/learning.svg' %} " width="80" alt="">
         <p class="text-center text-break mt-4">
@@ -183,9 +185,92 @@
         <p class="text-center text-break detail">
         </p>
       </div>
-
-      -->
     </div>
+
+
+    <div class="row  justify-content-center mt-5 mb-2 pricing-container">
+      <h1 class="row text-center"><strong>Pricing</strong></h1>
+    </div>
+
+
+    <section class="pricing py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Free Tier -->
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Free</h5>
+                <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited Private
+                    Projects
+                  </li>
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated Phone
+                    Support
+                  </li>
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+          <!-- Plus Tier -->
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
+                <h6 class="card-price text-center">$9<span class="period">/month</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+          <!-- Pro Tier -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
+                <h6 class="card-price text-center">$49<span class="period">/month</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free
+                    Subdomains
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
+                </ul>
+                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="row justify-content-center mt-5 mb-5">
       <h1 class="text-center col-12 mt-5" id="click_action"><strong> see <img src="{% static 'images/logo_black.svg' %}"
                                                                               width="110" alt=""> in action !</strong>
