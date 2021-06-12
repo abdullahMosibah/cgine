@@ -2,10 +2,13 @@ from django.shortcuts import get_object_or_404, render
 
 from .models import category, knowledge_block, lesson
 
-
 # Create your views here.
-def prototype_page_view(request):
-    return render(request=request, template_name="pages/prototype_page.html")
+
+
+def home_view(request):
+    # TODO: pass the demo lesson from here to the landing page.
+    context = {}
+    return render(request, context=context, template_name="pages/home.html")
 
 
 def lesson_view(request, category_id, id):
@@ -30,4 +33,3 @@ def category_view(request, category_id):
     return render(
         request=request, context=context, template_name="pages/category_page.html"
     )
-

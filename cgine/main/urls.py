@@ -1,13 +1,11 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
-from cgine.main.views import category_view, lesson_view, prototype_page_view
+from cgine.main.views import category_view, home_view, lesson_view
 
 app_name = "main"
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path("demo/", view=prototype_page_view, name="demo"),
-
+    path("", view=home_view, name="home"),
     path("category/<category_id>", view=category_view, name="category"),
     path("category/<category_id>/lesson/<id>", view=lesson_view, name="lesson"),
     # path("category/<id>")

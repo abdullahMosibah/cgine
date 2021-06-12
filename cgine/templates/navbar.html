@@ -8,7 +8,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
-      <span   class="navbar-toggler-icon mx-auto d-block mt-1"><img src="{% static 'images/hamburger.svg' %}" width="100%"  alt=""></span>
+      <span class="navbar-toggler-icon mx-auto d-block mt-1"><img src="{% static 'images/hamburger.svg' %}" width="100%"
+                                                                  alt=""></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto ml-5 justify-content-end">
@@ -18,7 +19,7 @@
         </li>
         <li class="nav-item">
           {# URL provided by django-allauth/account/urls.py #}
-          <a class="nav-link pr-3" href="{% url 'main:home' %}"> <strong>Products</strong></a>
+          <a class="nav-link pr-3" onclick="window.location.href='#pricing-container';"> <strong>Pricing</strong></a>
         </li>
 
         {% if request.user.is_authenticated %}
@@ -44,7 +45,7 @@
             <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}"> <strong>Sign In</strong></a>
           </li>
         {% endif %}
-
+        <a class="nav-link " href="https://discord.gg/cFSrUHn2VH"> <strong>Join Discord</strong></a>
       </ul>
 
     </div>

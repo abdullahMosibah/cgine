@@ -15,12 +15,12 @@
         </li>
         <li class="nav-item">
           {# URL provided by django-allauth/account/urls.py #}
-          <a class="nav-link pr-3" href="{% url 'main:home' %}"> <strong>Products</strong></a>
+          <!--<a class="nav-link pr-3" onclick="window.location.href='#pricing-container';"> <strong>Pricing</strong></a>-->
         </li>
         {% if request.user.is_authenticated %}
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}
-            <a class="nav-link " href="{% url 'users:detail' request.user.username %}"> <strong>My Profile</strong></a>
+            <a class="nav-link" href="{% url 'users:detail' request.user.username %}"> <strong>My Profile</strong></a>
           </li>
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}

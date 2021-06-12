@@ -27,11 +27,12 @@
 
 
         <div class="px-3 row action- justify-content-start ">
-          <button type="button" onclick="window.location.href='#click_action';" id="action_button"
+          <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
                   class="button-primary col-sm-12 col-lg-3 mr-1 mt-1">
             Start
           </button>
           <button type="button" id="action_button"
+                  onclick="window.location.href='https://cgine.app/category/1/lesson/daa83505-7076-43ba-9722-8dee369d1a45'"
                   class="button-outline  col-sm-12 col-lg-3 mt-1">
             Demo
           </button>
@@ -125,9 +126,20 @@
     </div>
 
     <div class="row features-container justify-content-center mt-5 mb-5">
+      <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
+              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+        Get started
+      </button>
+    </div>
+    <div class="row features-container justify-content-center mt-5 mb-5">
       <img alt="comapre" class=" mx-auto d-block img-fluid" src="{% static 'images/compare.svg' %}">
     </div>
-
+    <div class="row features-container justify-content-center mt-5 mb-5">
+      <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
+              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+        Get started
+      </button>
+    </div>
     <div class="row features-container justify-content-center mt-5 mb-5">
       <h1 class=" col-12 text-center mt-5"><strong>is <img src="{% static 'images/logo_black.svg' %}"
                                                            width="110" alt=""> right for me ?</strong></h1>
@@ -186,9 +198,15 @@
         </p>
       </div>
     </div>
+    <div class="row features-container justify-content-center mt-5 mb-5">
+      <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
+              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+        Get started
+      </button>
+    </div>
 
 
-    <div class="row  justify-content-center mt-5 mb-2 pricing-container">
+    <div id="pricing-container" class="row  justify-content-center mt-5 mb-2 pricing-container">
       <h1 class="row text-center"><strong>Pricing</strong></h1>
     </div>
 
@@ -196,51 +214,56 @@
     <section class="pricing py-5">
       <div class="container">
         <div class="row">
-          <!-- Free Tier -->
-          <div class="col-lg-4">
-            <div class="card mb-5 mb-lg-0">
-              <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Free</h5>
-                <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
-                <hr>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited Private
-                    Projects
-                  </li>
-                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated Phone
-                    Support
-                  </li>
-                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports
-                  </li>
-                </ul>
-                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
-              </div>
-            </div>
-          </div>
+
           <!-- Plus Tier -->
           <div class="col-lg-4">
             <div class="card mb-5 mb-lg-0">
               <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
-                <h6 class="card-price text-center">$9<span class="period">/month</span></h6>
+                <h5 class="card-title text-muted text-uppercase text-center">Polymath</h5>
+                <h6 class="card-price text-center">$4<span class="period">/month</span></h6>
                 <hr>
                 <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status Reports
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>50GB</strong> Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>unlimited <strong>Public/Private</strong>
+                    lesson
                   </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>All public lessons can be accessed by a
+                    shareable link
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Video & audio add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Quizzes add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access (<strong>polymath</strong>
+                    status on discord)
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>24/7 premium customer support</li>
                 </ul>
-                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+                <a href="#" class="btn btn-block  get-started text-uppercase">Get started</a>
+              </div>
+            </div>
+          </div>
+          <!-- Free Tier -->
+
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 style="color: #68DEA6;" class=" card-title  text-uppercase text-center">Recommended</h5>
+                <h5 class="card-title text-muted text-uppercase text-center">Starter</h5>
+                <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5GB</strong> Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>5 Public lessons / month</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>All public lessons can be accessed by a
+                    shareable link
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Video & audio add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Quizzes add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access (<strong>starter</strong>
+                    status on discord)
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>24/7 customer support</li>
+                </ul>
+                <a href="#" class="btn btn-block get-started text-uppercase">Get started</a>
               </div>
             </div>
           </div>
@@ -248,22 +271,26 @@
           <div class="col-lg-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
-                <h6 class="card-price text-center">$49<span class="period">/month</span></h6>
+                <h5 class="card-title text-muted text-uppercase text-center">Enterprise</h5>
+                <h6 class="card-price text-center">$3<span class="period">per user/month</span></h6>
                 <hr>
                 <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong></li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free
-                    Subdomains
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>unlimited</strong> Storage</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>unlimited <strong>Public/Private</strong>
+                    lesson
                   </li>
-                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>private lesson are available to enterprise
+                    users
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Video & audio add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Quizzes add-on</li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>24/7 dedicated premium customer support
+                  </li>
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>free <strong>subdomain</strong></li>
                 </ul>
-                <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+                <a href="#" class="btn btn-block get-started text-uppercase">contact sales</a>
               </div>
             </div>
           </div>
@@ -299,4 +326,3 @@
   </div>
   {% include 'footer.html' %}
 {% endblock content %}
-

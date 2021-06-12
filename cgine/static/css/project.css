@@ -483,9 +483,11 @@ vue animation option1: fade, option2: dropdown
 /* pricing */
 
 section.pricing {
- 
-}
 
+}
+.get-started{
+  background-color: #68DEA6;
+}
 .pricing .card {
   border: none;
   border-radius: 1rem;
