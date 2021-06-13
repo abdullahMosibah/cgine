@@ -106,13 +106,13 @@
                   <transition name="dropdown">
                     <div v-if="showGlossary" class="col-lg-8 col-sm-12">
                       <p class="text-break" id="{{ knowledge_block.id }}">
-                        {{ knowledge_block.glossary }}</p>
+                        {{ knowledge_block.glossary | safe }}</p>
                     </div>
                   </transition>
                   <transition name="dropdown">
                     <div v-if="showResources" class="col-lg-3 col-sm-12 ">
                       <p class="text-break">
-                        {{ knowledge_block.resource }}</p>
+                        {{ knowledge_block.resource | safe }}</p>
                     </div>
                   </transition>
                 </div>
