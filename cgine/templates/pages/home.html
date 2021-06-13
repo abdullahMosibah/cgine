@@ -50,16 +50,22 @@
         receive educational material in a concise
         and self-paced form. </p>
 
-      <!-- TODO: add wisita video here -->
+      <!-- TODO: add wisita video here
       <button type="button" data-bs-toggle="modal" data-bs-target="#popup" id="popup_button" class=" button-outline">
         Walk-through video
       </button>
+      -->
 
 
     </div>
     <div class="row features-container justify-content-center mt-5 mb-5">
 
       <div class="row  justify-content-center">
+        <div class="col-lg-6 col-sm-12  align-self-center order-md-last">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
           <p class="feature-title text-center"><strong>knowledge blocks</strong></p>
           <p class="text-description text-center text mt-4">each lesson consist of knowledge blocks. but what is
@@ -69,11 +75,7 @@
             think of it as a slide that contains some related information. it's a simple way to organize knowledge to
             better understand the lesson</p>
         </div>
-        <div class="col-lg-6 col-sm-12  align-self-center">
-          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
-            <source src="{% static 'videos/test_video.mp4' %}">
-          </video>
-        </div>
+
       </div>
 
       <div class="row  justify-content-center mt-5">
@@ -94,6 +96,11 @@
       </div>
 
       <div class="row  justify-content-center mt-5">
+        <div class="col-lg-6 col-sm-12  align-self-center order-md-last">
+          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
+            <source src="{% static 'videos/test_video.mp4' %}">
+          </video>
+        </div>
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
           <p class="feature-title text-center"><strong>Quick google/google scholar search shortcuts</strong></p>
           <p class="text-description text-center text mt-4">by double-clicking on any highlighted text </p>
@@ -101,11 +108,7 @@
             you can either search that text on google or google scholar and play the related video/audio part that
             explains it</p>
         </div>
-        <div class="col-lg-6 col-sm-12  align-self-center">
-          <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
-            <source src="{% static 'videos/test_video.mp4' %}">
-          </video>
-        </div>
+
       </div>
 
       <div class="row  justify-content-center mt-5">
@@ -127,7 +130,7 @@
 
     <div class="row features-container justify-content-center mt-5 mb-5">
       <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
-              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+              class="button-primary">
         Get started
       </button>
     </div>
@@ -136,7 +139,7 @@
     </div>
     <div class="row features-container justify-content-center mt-5 mb-5">
       <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
-              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+              class="button-primary ">
         Get started
       </button>
     </div>
@@ -200,7 +203,7 @@
     </div>
     <div class="row features-container justify-content-center mt-5 mb-5">
       <button type="button" onclick="window.location.href='#pricing-container';" id="action_button"
-              class="button-primary col-sm-12 col-lg-2 mr-1 mt-1">
+              class="button-primary">
         Get started
       </button>
     </div>
@@ -298,6 +301,7 @@
       </div>
     </section>
 
+    <!--
     <div class="row justify-content-center mt-5 mb-5">
       <h1 class="text-center col-12 mt-5" id="click_action"><strong> see <img src="{% static 'images/logo_black.svg' %}"
                                                                               width="110" alt=""> in action !</strong>
@@ -312,17 +316,18 @@
           </div>
         </div>
       </a>
-      <!-- TODO: you can pass cetegories object and generate all category better than manually do it -->
-      <a href="/category/1/lesson/58949efb-6dfd-4302-af98-e57692fff245">
-        <div class="card shadow-sm category_card mx-4 my-2 " style="width: 13rem;">
-          <img src="{% static 'images/Demo.png' %}" class="card-img-top" alt="">
-          <div class="card-body">
-            <p class="card-text category_title text-center">Demo</p>
-          </div>
+       TODO: you can pass cetegories object and generate all category better than manually do it
+    <a href="/category/1/lesson/58949efb-6dfd-4302-af98-e57692fff245">
+      <div class="card shadow-sm category_card mx-4 my-2 " style="width: 13rem;">
+        <img src="{% static 'images/Demo.png' %}" class="card-img-top" alt="">
+        <div class="card-body">
+          <p class="card-text category_title text-center">Demo</p>
         </div>
-      </a>
+      </div>
+    </a>
 
-    </div>
+  </div>
+  -->
   </div>
   {% include 'footer.html' %}
 {% endblock content %}
