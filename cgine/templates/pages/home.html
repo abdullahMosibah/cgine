@@ -129,7 +129,7 @@
       <div class="row  justify-content-center mt-5">
         <div class="col-lg-6 col-sm-12  align-self-center order-md-last">
           <video height="100%" width="100%" autoplay class="border rounded shadow-lg feature-video " loop muted>
-            <source src="{% static 'videos/quiz-video.webm' %}">
+            <source src="{% static 'videos/glossary-video.webm' %}">
           </video>
         </div>
         <div class=" col-lg-6 col-sm-12 feature-description align-self-center">
@@ -253,7 +253,7 @@
                   </li>
                   <li><span class="fa-li"><i class="fas fa-check"></i></span>24/7 premium customer support</li>
                 </ul>
-                <a href="#" class="btn btn-block  get-started text-uppercase">Get started</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-block  get-started text-uppercase">Get started</a>
               </div>
             </div>
           </div>
@@ -279,7 +279,7 @@
                   </li>
                   <li><span class="fa-li"><i class="fas fa-check"></i></span>24/7 customer support</li>
                 </ul>
-                <a href="#" class="btn btn-block get-started text-uppercase">Get started</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-block get-started text-uppercase">Get started</a>
               </div>
             </div>
           </div>
@@ -306,7 +306,7 @@
                   </li>
                   <li><span class="fa-li"><i class="fas fa-check"></i></span>free <strong>subdomain</strong></li>
                 </ul>
-                <a href="#" class="btn btn-block get-started text-uppercase">contact sales</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-block get-started text-uppercase">contact sales</a>
               </div>
             </div>
           </div>

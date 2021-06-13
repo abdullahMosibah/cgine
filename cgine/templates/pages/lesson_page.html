@@ -44,7 +44,6 @@
     <button type="button" class="btn btn-outline-primary search-btn">play</button>
   </div>
   <!-- --------------------- -->
-
   <div id="lesson_app">
     <div class="container mt-4">
       <div class="row main-row ">
@@ -60,8 +59,6 @@
             {% endfor %}
           </ol>
         </div>
-
-
         <div class="col-lg-10 col-sm-12 main-content  bg-secondary-">
           <h1 class="text-start mb-1">{{ lesson.title }}</h1>
           <h5 style="color: #64829D" class="text-start ">{{ lesson.time_added }}</h5>
@@ -87,7 +84,7 @@
                   <p class="kb_title"><strong>{{ knowledge_block.title }}</strong></p>
                 </div>
                 <!-- the content is here -->
-                {{ knowledge_block.content|safe }}
+                {{ knowledge_block.content | safe }}
               </div>
               <div class="col-12">
                 <div class="row justify-content-end pb-4 mt-4">
