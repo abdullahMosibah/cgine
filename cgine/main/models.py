@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-
+import cgine.users.models as user
 
 class category(models.Model):
     app_label = "main"
@@ -18,10 +18,22 @@ class category(models.Model):
     # temporary fix  for category url
 
 
+
 class lesson(models.Model):
+    #TODO: add the enterprise options.
+    PUBLIC = "public"
+    PRIVATE = "private"
+
+    STATUS= [
+        (PUBLIC,  'community public'),
+        (PRIVATE, 'private'),
+    ]
+
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=True, unique=True
     )
+    author = models.ForeignKey(user.User, null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=9,choices=STATUS, null=True,default=PUBLIC)
     category = models.ForeignKey(
         category, related_name="lessons", null=True, on_delete=models.CASCADE
     )
@@ -105,6 +117,22 @@ class choice(models.Model):
     def __str__(self):
         return self.content
 
+
+class plan(models.Model):
+    name = models.CharField(max_length=254)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+class membership(models.Model):
+    user = models.ForeignKey(user.User,null=True, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    plan = models.ForeignKey(plan, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return   str( self.user)
 
 # 1 lesson => m knowledgeBlocks --> 1 quiz --> m questions
 #m = multiple

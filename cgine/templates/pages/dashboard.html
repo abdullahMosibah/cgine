@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% load static i18n %}{% block content %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  {% include "navbar-shadow.html" %}
+  <div class="container">
+    <div class="row justify-content-start">
+      <h1>Welcome, {{ request.user }} !</h1>
+    </div>
+    <div class="row justify-content-start">
+      <h6 class="text-muted">{{ membership.plan }}, ends at {{ membership.end_date }}</h6>
+    </div>
+    <div class="row justify-content-start mt-5">
+      <p style="font-size: 1.8em" class="text-start">your lessons</p>
+    </div>
+    <div class=" lessons-container row justify-content-start mt-2 ">
+      {% for lesson in lessons %}
+        <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
+             class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
+          <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
+          </p>
+          <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}</p>
+        </div>
+      {% endfor %}
+      <div onclick="location.href =''"
+           class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
+                  <img   class= "add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
+      </div>
+    </div>
+
+
+    <div class="row justify-content-start mt-5">
+      <p style="font-size: 1.8em" class="text-start">community lessons</p>
+    </div>
+    <div class=" lessons-container row justify-content-start mt-2">
+      {% for lesson in public_lessons %}
+        <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
+             class=" mx-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
+          <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
+          </p>
+          <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}, by
+            <strong>{{ lesson.author }}</strong></p>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+  {% include 'footer.html' %}
+  <script>
+
+    var lesson_app = new Vue({
+      el: "#lesson_app",
+      delimiters: ["[[", "]]"],
+      data: {},
+
+
+      methods: {}
+
+    })
+
+
+  </script>
+{% endblock content %}

@@ -59,6 +59,22 @@ body {
   border-radius: 20px;
   background-color: #ffffff;
 }
+.lesson-button {
+  max-height: 10rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.lesson-button:hover{
+  cursor: pointer;
+   background: #F3F7FB;
+}
+.add{
+  height: 100%;
+}
+
+.lesson-button-title{
+  font-size: 1.5em;
+}
 
 .pricing-kit {
   border-radius: 20px;
@@ -485,9 +501,11 @@ vue animation option1: fade, option2: dropdown
 section.pricing {
 
 }
-.get-started{
+
+.get-started {
   background-color: #68DEA6;
 }
+
 .pricing .card {
   border: none;
   border-radius: 1rem;
@@ -545,4 +563,9 @@ section.pricing {
   .pricing .card:hover .btn {
     opacity: 1;
   }
+}
+
+hr.rounded {
+  border-top: 3px solid #bbb;
+  border-radius: 5px;
 }
