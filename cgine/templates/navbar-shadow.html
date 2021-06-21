@@ -1,11 +1,13 @@
 {% load static i18n %}
 <nav class="navbar navbar-shadow navbar-expand-md shadow mb-5">
   <div class="container">
-    <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{% static 'images/logo_black.svg' %}" width="110"></a>
+    <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{% static 'images/logo_black.svg' %}"
+                                                               width="110"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
-      <span   class="navbar-toggler-icon mx-auto d-block mt-1"><img src="{% static 'images/hamburger.svg' %}" width="100%"  alt=""></span>
+      <span class="navbar-toggler-icon mx-auto d-block mt-1"><img src="{% static 'images/hamburger.svg' %}" width="100%"
+                                                                  alt=""></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto ml-5 justify-content-end">
@@ -13,19 +15,17 @@
           <a class="nav-link pr-3" href="{% url 'main:home' %}"> <strong>Home</strong> <span
                   class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          {# URL provided by django-allauth/account/urls.py #}
-          <!--<a class="nav-link pr-3" onclick="window.location.href='#pricing-container';"> <strong>Pricing</strong></a>-->
-        </li>
+
         {% if request.user.is_authenticated %}
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}
-            <a class="nav-link" href="{% url 'users:detail' request.user.username %}"> <strong>My Profile</strong></a>
+            <a class="nav-link " href="{% url 'main:dashboard' %}"> <strong>Dashboard</strong></a>
           </li>
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}
-            <a class="nav-link" href="{% url 'main:home' %}"><strong>Categories</strong></a>
+            <a class="nav-link " href="{% url 'main:browse' %}"> <strong>Browse</strong></a>
           </li>
+
           <li class="nav-item pr-3">
             {# URL provided by django-allauth/account/urls.py #}
             <a class="nav-link" href="{% url 'account_logout' %}"> <strong>Sign Out</strong></a>
@@ -40,6 +40,7 @@
             <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}"> <strong>Sign In</strong></a>
           </li>
         {% endif %}
+        <a class="nav-link " href="https://discord.gg/cFSrUHn2VH"> <strong>Join Discord</strong></a>
       </ul>
     </div>
   </div>
