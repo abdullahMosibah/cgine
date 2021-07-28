@@ -62,6 +62,10 @@
         <div class="col-lg-10 col-sm-12 main-content  bg-secondary-">
           <h1 class="text-start mb-1">{{ lesson.title }}</h1>
           <h5 style="color: #64829D" class="text-start ">{{ lesson.time_added }}</h5>
+
+          {% if request.user == lesson.author  %}
+
+        {% endif %}
           <!-- the knowledge block -->
           {% for knowledge_block in lesson.get_knowledge_blocks %}
 

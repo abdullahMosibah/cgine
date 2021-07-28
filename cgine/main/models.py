@@ -54,6 +54,9 @@ class lesson(models.Model):
     def get_absolute_url(self):
         return f"/category/{self.category_id}/lesson/{self.id}"
 
+    def get_edit_url(self):
+        return f"/edit/lesson/{self.id}"
+
 
 class knowledge_block(models.Model):
     title = models.CharField(max_length=100, default="new knowledge Block", null=True)
