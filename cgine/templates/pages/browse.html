@@ -7,7 +7,7 @@
     <div class=" lessons-container row justify-content-start mt-2">
       {% for lesson in public_lessons %}
         <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
-             class=" mx-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
+             class=" mx-2 my-2  col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
           <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
           </p>
           <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}, by

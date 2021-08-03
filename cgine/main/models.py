@@ -80,6 +80,12 @@ class knowledge_block(models.Model):
     def get_quiz(self):
         return self.quiz.all()
 
+    def get_edit_url(self):
+        return f"/edit/knowledge_block/{self.id}"
+
+    def get_absolute_url(self):
+        return f"/category/{self.lesson.category_id}/lesson/{self.lesson.id}"
+
 
 class quiz(models.Model):
     knowledge_block = models.ForeignKey(

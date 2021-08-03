@@ -68,6 +68,7 @@ body {
 }
 
 .lesson-button:hover {
+  cursor: pointer;
   background: #F3F7FB;
   border-color: #ffffff;
 
@@ -197,7 +198,7 @@ p {
 }
 
 .header {
-  background-color: #1B3149;
+  background-color: #ffffff;
 }
 
 .index-element {

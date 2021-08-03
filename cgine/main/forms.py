@@ -8,7 +8,10 @@ class lesson_form(forms.ModelForm):
     class Meta:
         model = lesson
         fields = ["title", "description", "category", "status"]
+'''
 
+
+'''
 
 class knowledge_block_form(forms.ModelForm):
     class Meta:

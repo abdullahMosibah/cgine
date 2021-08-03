@@ -63,9 +63,7 @@
           <h1 class="text-start mb-1">{{ lesson.title }}</h1>
           <h5 style="color: #64829D" class="text-start ">{{ lesson.time_added }}</h5>
 
-          {% if request.user == lesson.author  %}
 
-        {% endif %}
           <!-- the knowledge block -->
           {% for knowledge_block in lesson.get_knowledge_blocks %}
 
@@ -88,7 +86,9 @@
                   <p class="kb_title"><strong>{{ knowledge_block.title }}</strong></p>
                 </div>
                 <!-- the content is here -->
-                {{ knowledge_block.content | safe }}
+                <p class="kb_content text-break">
+                  {{ knowledge_block.content  }}
+                </p>
               </div>
               <div class="col-12">
                 <div class="row justify-content-end pb-4 mt-4">
@@ -118,6 +118,12 @@
                   </transition>
                 </div>
               </div>
+              {% if request.user == lesson.author %}
+                <button onclick="location.href = '{{ knowledge_block.get_edit_url }}'" class="btn button-primary mr-2">
+                  Edit
+                </button>
+              {% endif %}
+
             </div>
 
             {% for quiz in knowledge_block.get_quiz %}
@@ -148,6 +154,13 @@
             {% endfor %}
 
           {% endfor %}
+        <div class="row  justify-content-center knowledge-block shadow-lg mb-4  px-2 py-2">
+           <button data-toggle="modal" onclick="location.href = '/add/knowledge_block/'"
+              class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button btn shadow py-3 px-3">
+        <img class="add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
+      </button>
+
+        </div>
           <!-- end of knowledge block -->
           <h5 style="color: #64829D" class="text-center ">DONE !</h5>
 
