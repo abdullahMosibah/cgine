@@ -8,12 +8,15 @@ class category(models.Model):
     name = models.CharField(max_length=100, null=True)
     icon = models.FileField(upload_to="category_icons/")
 
+    def __str__(self):
+        return  str(self.id) + " " + self.name
     @property
     def get_lessons(self):
         return self.lessons.all().order_by("time_added")
 
     def get_absolute_url(self):
         return f"/category/{self.id}"
+
 
     # temporary fix  for category url
 
