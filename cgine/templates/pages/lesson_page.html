@@ -154,6 +154,8 @@
             {% endfor %}
 
           {% endfor %}
+
+        {% if request.user == lesson.author %}
         <div class="row  justify-content-center knowledge-block shadow-lg mb-4  px-2 py-2">
            <button data-toggle="modal" onclick="location.href = '/add/knowledge_block/'"
               class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button btn shadow py-3 px-3">
@@ -161,6 +163,7 @@
       </button>
 
         </div>
+        {% endif %}
           <!-- end of knowledge block -->
           <h5 style="color: #64829D" class="text-center ">DONE !</h5>
 
