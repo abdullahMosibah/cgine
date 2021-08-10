@@ -62,6 +62,8 @@
         <div class="col-lg-10 col-sm-12 main-content  bg-secondary-">
           <h1 class="text-start mb-1">{{ lesson.title }}</h1>
           <h5 style="color: #64829D" class="text-start ">{{ lesson.time_added }}</h5>
+
+
           <!-- the knowledge block -->
           {% for knowledge_block in lesson.get_knowledge_blocks %}
 
@@ -84,7 +86,9 @@
                   <p class="kb_title"><strong>{{ knowledge_block.title }}</strong></p>
                 </div>
                 <!-- the content is here -->
-                {{ knowledge_block.content | safe }}
+                <p class="kb_content text-start text-break">
+                  {{ knowledge_block.content | safe }}
+                </p>
               </div>
               <div class="col-12">
                 <div class="row justify-content-end pb-4 mt-4">
@@ -114,6 +118,12 @@
                   </transition>
                 </div>
               </div>
+              {% if request.user == lesson.author %}
+                <button onclick="location.href = '{{ knowledge_block.get_edit_url }}'" class="btn button-primary mr-2">
+                  Edit
+                </button>
+              {% endif %}
+
             </div>
 
             {% for quiz in knowledge_block.get_quiz %}
@@ -144,6 +154,16 @@
             {% endfor %}
 
           {% endfor %}
+
+          {% if request.user == lesson.author %}
+            <div class="row  justify-content-center knowledge-block shadow-lg mb-4  px-2 py-2">
+              <button data-toggle="modal" onclick="location.href = '/add/knowledge_block/'"
+                      class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button btn shadow py-3 px-3">
+                <img class="add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
+              </button>
+
+            </div>
+          {% endif %}
           <!-- end of knowledge block -->
           <h5 style="color: #64829D" class="text-center ">DONE !</h5>
 
@@ -182,6 +202,23 @@
 
     })
 
+    /*
+  // to replace each word  [] with a color highlight
+  let regex = /(?<=\[)(.*?)(?=\])/g;
+  let kb_content = document.querySelectorAll(".kb_content");
+  kb_content.forEach(function (e){
+    let results = e.textContent.matchAll(regex);
+    for (let single_result of results){
+      console.log(single_result[0])
+        e.innerHTML = e.innerHTML.replaceAll(single_result[0] ,`<span id="text-block" class="text-block red-highlight">${single_result[0]}</span>`)
+    }
+
+
+
+
+  })
+
+     */
     let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
 
     let disclaimer = document.getElementById("disclaimer");
@@ -228,6 +265,7 @@
     }
 
     text_in_knowledge_blocks.forEach(function (e) {
+
       // double click event listener
       e.addEventListener("dblclick", function (f) {
         // to populate the info box + to make it appear when double clicked at any text.

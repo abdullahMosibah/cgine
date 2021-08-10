@@ -2,18 +2,24 @@ import uuid
 
 from django.db import models
 import cgine.users.models as user
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import  RichTextUploadingField
+
 
 class category(models.Model):
     app_label = "main"
     name = models.CharField(max_length=100, null=True)
     icon = models.FileField(upload_to="category_icons/")
 
+    def __str__(self):
+        return  str(self.id) + " " + self.name
     @property
     def get_lessons(self):
         return self.lessons.all().order_by("time_added")
 
     def get_absolute_url(self):
         return f"/category/{self.id}"
+
 
     # temporary fix  for category url
 
@@ -54,6 +60,9 @@ class lesson(models.Model):
     def get_absolute_url(self):
         return f"/category/{self.category_id}/lesson/{self.id}"
 
+    def get_edit_url(self):
+        return f"/edit/lesson/{self.id}"
+
 
 class knowledge_block(models.Model):
     title = models.CharField(max_length=100, default="new knowledge Block", null=True)
@@ -61,7 +70,7 @@ class knowledge_block(models.Model):
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateTimeField(auto_now_add=True, null=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)
     resource = models.TextField()
@@ -76,6 +85,12 @@ class knowledge_block(models.Model):
 
     def get_quiz(self):
         return self.quiz.all()
+
+    def get_edit_url(self):
+        return f"/edit/knowledge_block/{self.id}"
+
+    def get_absolute_url(self):
+        return f"/category/{self.lesson.category_id}/lesson/{self.lesson.id}"
 
 
 class quiz(models.Model):

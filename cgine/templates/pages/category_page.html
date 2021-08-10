@@ -3,19 +3,18 @@
   <div class="container mt-3">
     <div class="row justify-content-center">
       <div class="header rounded shadow" style="width: 100%; height: 20rem">
-        <img src="{% static 'images/saad_academy.jpg' %}" class="mx-auto d-block mt-5" height="70%">
+        <img src="{{ category.icon.url }}" class="mx-auto d-block mt-5" height="70%">
       </div>
     </div>
-    <div class="row">
+    <div class=" lessons-container row justify-content-center mt-2">
       {% for lesson in lessons %}
-        <a href="{{lesson.get_absolute_url}}">
-          <div class="card shadow-sm category_card mt-3" style="width: 20rem;">
-            <img src="{{lesson.icon.url }}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p class="card-text category_title text-center">{{lesson.title}}</p>
-            </div>
-          </div>
-        </a>
+        <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
+             class="my-2 mx-2  col-lg-5 col-sm-12 lesson-button shadow py-3 px-3">
+          <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
+          </p>
+          <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}, by
+            <strong>{{ lesson.author }}</strong></p>
+        </div>
       {% endfor %}
     </div>
   </div>

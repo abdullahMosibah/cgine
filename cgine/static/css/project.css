@@ -59,20 +59,26 @@ body {
   border-radius: 20px;
   background-color: #ffffff;
 }
+
 .lesson-button {
   max-height: 10rem;
+  border-color: #ffffff;
   border-radius: 20px;
   background-color: #ffffff;
 }
-.lesson-button:hover{
+
+.lesson-button:hover {
   cursor: pointer;
-   background: #F3F7FB;
+  background: #F3F7FB;
+  border-color: #ffffff;
+
 }
-.add{
+
+.add {
   height: 100%;
 }
 
-.lesson-button-title{
+.lesson-button-title {
   font-size: 1.5em;
 }
 
@@ -192,7 +198,7 @@ p {
 }
 
 .header {
-  background-color: #1B3149;
+  background-color: #ffffff;
 }
 
 .index-element {

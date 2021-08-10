@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% load static i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+  {% include "navbar-shadow.html" %}
+  <div class="container">
+    <h1> {{ lesson.title }}</h1>
+    <div class=" lessons-container row justify-content-center mt-2 ">
+
+      {% for knowledge_block in knowledge_blocks %}
+        <div class=" mx-2 my-2 col-lg-12 col-sm-12 knowledge-block shadow py-3 px-3">
+
+          <form class="knowledge_block_form" method="post">
+            {% csrf_token %}
+            <div id="div_id_title" class="form-group">
+              <label for="id_title" class=" requiredField">
+                Title<span class="asteriskField">*</span> </label>
+              <div class=""><input type="text" name="title" value="{{ knowledge_block.title }}" maxlength="100"
+                                   class="textinput textInput form-control" required="" id="id_title"></div>
+            </div>
+            <div id="div_id_content" class="form-group"><label for="id_content" class=" requiredField">
+              Content<span class="asteriskField">*</span> </label>
+              <div class=""><textarea name="content" cols="40" rows="10" class="textarea form-control" required=""
+                                      id="id_content" spellcheck="false"> {{ knowledge_block.content }}</textarea></div>
+            </div>
+            <div id="div_id_video" class="form-group"><label for="id_video" class=" requiredField">
+              Video<span class="asteriskField">*</span> </label>
+              <div class=""><input value="{{ knowledge_block.video.url }}" type="file" name="video"
+                                   class="clearablefileinput form-control-file" required=""
+                                   id="id_video"></div>
+            </div>
+            <div id="div_id_audio" class="form-group"><label for="id_audio" class=" requiredField">
+              Audio<span class="asteriskField">*</span> </label>
+              <div class=""><input value="{{ knowledge_block.audio.url }}" type="file" name="audio"
+                                   class="clearablefileinput form-control-file" required=""
+                                   id="id_audio"></div>
+            </div>
+            <div id="div_id_resource" class="form-group"><label for="id_resource" class=" requiredField">
+              Resource<span class="asteriskField">*</span> </label>
+              <div class=""><textarea name="resource" cols="40" rows="10" class="textarea form-control" required=""
+                                      id="id_resource" spellcheck="false">{{ knowledge_block.resources }}</textarea>
+              </div>
+            </div>
+            <div id="div_id_glossary" class="form-group"><label for="id_glossary" class=" requiredField">
+              Glossary<span class="asteriskField">*</span> </label>
+              <div class=""><textarea name="glossary" cols="40" rows="10" class="textarea form-control" required=""
+                                      id="id_glossary">{{ knowledge_block.golssary }}</textarea></div>
+            </div>
+
+          </form>
+          <button class="btn button-primary" onclick="edit_form()">edit</button>
+        </div>
+      {% endfor %}
+      <button data-toggle="modal" data-target="#add_modal"
+              class=" mx-2 my-2 col-12 lesson-button btn shadow py-3 px-3">
+        <img class="add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function submit_form() {
+      var formData = new FormData()
+      formData.append("title", document.getElementById("id_title").value)
+      formData.append("content", document.getElementById("id_content").value)
+      formData.append("video", document.getElementById("id_video").value)
+      formData.append("audio", document.getElementById("id_audio").value)
+      formData.append("resources", document.getElementById("id_resources").value)
+      formData.append("glossary", document.getElementById("id_glossary").value)
+      formData.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
+
+      axios({
+        method: "post",
+        url: "edit_lesson/",
+        data: formData,
+        headers: {"Content-Type": 'multipart/form-data'}
+      }).then((response) => {
+        console.log("done md")
+        // refresh the page to retrive the latest lessons list, could be done asyncronsly, but this is a hot fix
+        location.reload()
+
+      }).catch((error) => {
+        console.log((error))
+      })
+
+    }
+
+  </script>
+{% endblock %}

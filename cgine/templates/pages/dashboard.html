@@ -1,6 +1,39 @@
-{% extends 'base.html' %} {% load static i18n %}{% block content %}
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+{% extends 'base.html' %} {% load static i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <!--
+    axios -> post request to a URL -> view -> Json response -> back to axios ( all async)
+
+    -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12" xmlns="http://www.w3.org/1999/html"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   {% include "navbar-shadow.html" %}
+
+  <div class="add_modal modal fade" aria-hidden id="add_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New Lesson</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="lesson_form" id="" method="post">
+            {% csrf_token %}
+            {{ lesson_form|crispy }}
+
+          </form>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn button-primary" onclick="submit_form()">Create</button>
+          <button type="button" class="btn button-outline" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="row justify-content-start">
       <h1>Welcome, {{ request.user }} !</h1>
@@ -15,15 +48,23 @@
       {% for lesson in lessons %}
         <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
              class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
-          <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
-          </p>
-          <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}</p>
+          <div class="row px-2">
+            <p class="  lesson- -title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
+            </p>
+          </div>
+          <div class="row px-2">
+            <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}</p>
+          </div>
+
+
         </div>
       {% endfor %}
-      <div onclick="location.href =''"
-           class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
-                  <img   class= "add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
-      </div>
+      <button data-toggle="modal" data-target="#add_modal"
+              class=" mx-2 my-2 col-lg-4 col-sm-12 lesson-button btn shadow py-3 px-3">
+        <img class="add img-fluid mx-auto d-block" src="{% static 'images/plus.svg' %}">
+      </button>
+
+
     </div>
 
 
@@ -33,7 +74,7 @@
     <div class=" lessons-container row justify-content-start mt-2">
       {% for lesson in public_lessons %}
         <div onclick="location.href ='{{ lesson.get_absolute_url }}'"
-             class=" mx-2 col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
+             class=" mx-2 my-2  col-lg-4 col-sm-12 lesson-button shadow py-3 px-3">
           <p class="  lesson-button-title text-start text-break"><span class="divider mr-1"> </span>{{ lesson.title }}
           </p>
           <p style="font-size: 1em" class=" text-break text-muted text-start">created at {{ lesson.time_added }}, by
@@ -46,13 +87,40 @@
   {% include 'footer.html' %}
   <script>
 
+    function submit_form() {
+      var formData = new FormData()
+      formData.append("title", document.getElementById("id_title").value)
+      formData.append("description", document.getElementById("id_description").value)
+      formData.append("category", document.getElementById("id_category").value)
+      formData.append("status", document.getElementById("id_status").value)
+      formData.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
+
+      axios({
+        method: "post",
+        url: "add_lesson/",
+        data: formData,
+        headers: {"Content-Type": 'multipart/form-data'}
+      }).then((response) => {
+        $('#add_modal').modal('hide');
+        // refresh the page to retrive the latest lessons list, could be done asyncronsly, but this is a hot fix
+        location.reload()
+
+      }).catch((error) => {
+        console.log((error))
+      })
+
+    }
+
     var lesson_app = new Vue({
       el: "#lesson_app",
       delimiters: ["[[", "]]"],
       data: {},
 
 
-      methods: {}
+      methods: {
+        submit_form: function submit_form() {
+        },
+      }
 
     })
 

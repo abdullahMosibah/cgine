@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static i18n %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+  {% include 'navbar-shadow.html' %}
+
+  <div class="container knowledge-block px-4 py-4">
+
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+      {{ form | crispy }}
+      <input type="submit" value="Add">
+    </form>
+
+  </div>
+{% endblock %}
