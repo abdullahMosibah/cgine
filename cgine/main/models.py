@@ -2,6 +2,9 @@ import uuid
 
 from django.db import models
 import cgine.users.models as user
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import  RichTextUploadingField
+
 
 class category(models.Model):
     app_label = "main"
@@ -67,7 +70,7 @@ class knowledge_block(models.Model):
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateTimeField(auto_now_add=True, null=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(upload_to="audios/", null=True)
     resource = models.TextField()

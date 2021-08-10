@@ -87,7 +87,7 @@
                 </div>
                 <!-- the content is here -->
                 <p class="kb_content text-start text-break">
-                  {{ knowledge_block.content }}
+                  {{ knowledge_block.content | safe }}
                 </p>
               </div>
               <div class="col-12">
@@ -202,18 +202,23 @@
 
     })
 
-    // to replace each word  [] with a color highlight
-    let regex = /(?<=\[)(.*?)(?=\])/g;
-    let kb_content = document.querySelectorAll(".kb_content");
-    kb_content.forEach(function (e){
-      let results = e.textContent.matchAll(regex);
-      for (let single_result of results){
-        console.log(single_result[0])
-          e.innerHTML = e.innerHTML.replaceAll(single_result[0] ,`<span id="text-block" class="text-block red-highlight">${single_result[0]}</span>`)
-      }
+    /*
+  // to replace each word  [] with a color highlight
+  let regex = /(?<=\[)(.*?)(?=\])/g;
+  let kb_content = document.querySelectorAll(".kb_content");
+  kb_content.forEach(function (e){
+    let results = e.textContent.matchAll(regex);
+    for (let single_result of results){
+      console.log(single_result[0])
+        e.innerHTML = e.innerHTML.replaceAll(single_result[0] ,`<span id="text-block" class="text-block red-highlight">${single_result[0]}</span>`)
+    }
 
 
-    })
+
+
+  })
+
+     */
     let text_in_knowledge_blocks = document.querySelectorAll("#text-block");
 
     let disclaimer = document.getElementById("disclaimer");
