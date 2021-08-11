@@ -1,7 +1,8 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
-from cgine.main.views import category_view, home_view, lesson_view, dashboard_view, browse_view, add_lesson_json,edit_knowledge_block, add_knowledge_block
+from cgine.main.views import category_view, home_view, lesson_view, dashboard_view, browse_view, add_lesson_json, \
+    edit_knowledge_block, add_knowledge_block, delete_knowledge_block, edit_lesson,delete_lesson
 
 app_name = "main"
 urlpatterns = [
@@ -11,8 +12,11 @@ urlpatterns = [
     path("dashboard", view=dashboard_view, name="dashboard"),
     path("browse", view=browse_view, name="browse"),
     path("add_lesson/", view=add_lesson_json, name="add_lesson"),
-    path("edit/knowledge_block/<pk>/", view=edit_knowledge_block.as_view(), name= "edit_knowledge_block"),
+    path("edit/lesson/<pk>/", view=edit_lesson.as_view(), name="edit_lesson"),
+    path("delete/lesson/<pk>/", view=delete_lesson.as_view(), name="delete_lesson"),
+    path("edit/knowledge_block/<pk>", view=edit_knowledge_block.as_view(), name="edit_knowledge_block"),
     path("add/knowledge_block/", view=add_knowledge_block.as_view(), name="add_knowledge_block"),
+    path("delete/knowledge_block/<pk>", view=delete_knowledge_block.as_view(), name="delete_knowledge_block"),
 
     # path("category/<id>")
     # path("~update/", view=user_update_view, name="update"),

@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import category, knowledge_block, lesson, membership
 from .forms import lesson_form, knowledge_block_form
 from django.http import JsonResponse
-from django.views.generic.edit import FormView, UpdateView, CreateView
-
+from django.views.generic.edit import  UpdateView, CreateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 '''
@@ -42,6 +42,15 @@ def add_lesson_json(request):
             new_form.save()
     return JsonResponse({"status": "success"})
 
+class edit_lesson(UpdateView):
+    model = lesson
+    fields = ["title", "description", "category", "status"]
+    template_name = "pages/edit_lesson.html"
+
+class delete_lesson(DeleteView):
+    model = lesson
+    template_name = "pages/delete_lesson.html"
+    success_url = reverse_lazy("main:dashboard")
 
 class edit_knowledge_block(UpdateView):
     model = knowledge_block
@@ -54,6 +63,13 @@ class add_knowledge_block(CreateView):
     model = knowledge_block
     fields = ["lesson","title", "content", "video", "audio", "resource", "glossary"]
     template_name = "pages/add_knowledge_block.html"
+
+class delete_knowledge_block(DeleteView):
+    model = knowledge_block
+    template_name = "pages/delete_knowledge_block.html"
+    success_url = reverse_lazy('main:dashboard')
+
+
 
 '''
 def edit_knowledge_block(request, id):

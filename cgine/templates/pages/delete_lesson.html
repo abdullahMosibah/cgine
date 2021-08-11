@@ -8,9 +8,8 @@
   <div class="container knowledge-block px-4 py-4">
 
     <form method="post">{% csrf_token %}
-      {{ form.media }}
-      {{ form | crispy }}
-      <input type="submit" value="Edit">
+      <p>are you sure you want to delete {{ object }} ? </p>
+      <input type="submit" value="delete">
     </form>
 
   </div>

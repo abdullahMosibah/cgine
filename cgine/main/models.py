@@ -63,6 +63,9 @@ class lesson(models.Model):
     def get_edit_url(self):
         return f"/edit/lesson/{self.id}"
 
+    def get_delete_url(self):
+        return f"/delete/lesson/{self.id}"
+
 
 class knowledge_block(models.Model):
     title = models.CharField(max_length=100, default="new knowledge Block", null=True)
@@ -70,11 +73,11 @@ class knowledge_block(models.Model):
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateTimeField(auto_now_add=True, null=True)
-    content = RichTextUploadingField()
+    content = RichTextUploadingField(blank=True,null=True)
     video = models.FileField(upload_to="videos/")
-    audio = models.FileField(upload_to="audios/", null=True)
-    resource = models.TextField()
-    glossary = models.TextField(null=True)
+    audio = models.FileField(blank=True,upload_to="audios/", null=True)
+    resource = models.TextField(blank=True,null=True)
+    glossary = models.TextField(blank=True,null=True)
 
     def __str__(self):
         return self.title
@@ -88,6 +91,9 @@ class knowledge_block(models.Model):
 
     def get_edit_url(self):
         return f"/edit/knowledge_block/{self.id}"
+
+    def get_delete_url(self):
+        return f"/delete/knowledge_block/{self.id}"
 
     def get_absolute_url(self):
         return f"/category/{self.lesson.category_id}/lesson/{self.lesson.id}"
