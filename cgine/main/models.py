@@ -13,17 +13,14 @@ class category(models.Model):
 
     def __str__(self):
         return  str(self.id) + " " + self.name
+
     @property
     def get_lessons(self):
         return self.lessons.all().order_by("time_added")
 
     def get_absolute_url(self):
         return f"/category/{self.id}"
-
-
     # temporary fix  for category url
-
-
 
 class lesson(models.Model):
     #TODO: add the enterprise options.
@@ -76,8 +73,8 @@ class knowledge_block(models.Model):
     content = RichTextUploadingField(blank=True,null=True)
     video = models.FileField(upload_to="videos/")
     audio = models.FileField(blank=True,upload_to="audios/", null=True)
-    resource = models.TextField(blank=True,null=True)
-    glossary = models.TextField(blank=True,null=True)
+    resource = RichTextUploadingField(blank=True,null=True)
+    glossary = RichTextUploadingField(blank=True,null=True)
 
     def __str__(self):
         return self.title
@@ -113,7 +110,7 @@ class quiz(models.Model):
 
 
 class question(models.Model):
-    content = models.TextField(default="a question")
+    content = RichTextUploadingField(blank=True,null=True, default="a question")
     quiz = models.ForeignKey(
         quiz, related_name="questions", null=True, on_delete=models.CASCADE
     )

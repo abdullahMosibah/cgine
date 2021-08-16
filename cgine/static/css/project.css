@@ -55,6 +55,12 @@ body {
 
 }
 
+em {
+  background: rgba(192, 57, 43, 0.2);
+  padding: 2px 2px;
+
+}
+
 .knowledge-block {
   border-radius: 20px;
   background-color: #ffffff;
