@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 
 from cgine.main.views import category_view, home_view, lesson_view, dashboard_view, browse_view, add_lesson_json, \
-    edit_knowledge_block, add_knowledge_block, delete_knowledge_block, edit_lesson,delete_lesson
+    edit_knowledge_block, add_knowledge_block, delete_knowledge_block,edit_lesson,delete_lesson
 
 app_name = "main"
 urlpatterns = [

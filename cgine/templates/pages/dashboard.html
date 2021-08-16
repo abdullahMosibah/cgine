@@ -39,7 +39,11 @@
       <h1>Welcome, {{ request.user }} !</h1>
     </div>
     <div class="row justify-content-start">
-      <h6 class="text-muted">{{ membership.plan }}, ends at {{ membership.end_date }}</h6>
+      {% if membership %}
+        {% for member in membership %}
+      <h6 class="text-muted">{{ member.plan }}, ends at {{ member.end_date }}</h6>
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="row justify-content-start mt-5">
       <p style="font-size: 1.8em" class="text-start">your lessons</p>
