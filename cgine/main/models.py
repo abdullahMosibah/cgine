@@ -127,7 +127,7 @@ class question(models.Model):
 
 
 class choice(models.Model):
-    content = RichTextUploadingField(blank=True,null=True)
+    content = models.TextField(blank=True,null=True)
     is_correct = models.BooleanField()
     question = models.ForeignKey(
         question, null=True, related_name="choices", on_delete=models.CASCADE
