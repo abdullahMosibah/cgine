@@ -89,7 +89,7 @@
             {% endif %}
             <div class="col-12 pt-4  ">
 
-              <video class="border rounded shadow  video float-right mb-3 " controls>
+              <video class="border rounded shadow  video float-right ml-3 mb-3 " controls>
                 <source src="{{ knowledge_block.video.url }}">
               </video>
 
@@ -123,8 +123,8 @@
                 </transition>
                 <transition name="dropdown">
                   <div v-if="showResources" class="col-lg-3 col-sm-12 ">
-                    <p class="text-break">
-                      {{ knowledge_block.resource | safe }}</p>
+                    <div  style="max-width: 100%" class="text-break">
+                      {{ knowledge_block.resource | safe }}</div>
                   </div>
                 </transition>
               </div>
@@ -148,7 +148,7 @@
               <span class=" mb-2 mt-2 horizontal-divider"></span>
               {% for question in quiz.get_questions %}
                 <div class="col-12">
-                  <h1 class="text-start quiz-title  text-break mb-3">{{ question.content }}</h1>
+                  <h1 class="text-start quiz-title  text-break mb-3">{{ question.content | safe }}</h1>
                 </div>
                 {% for choice in question.get_choices %}
                   <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
@@ -234,6 +234,9 @@
   })
 
      */
+
+
+    //likened to css em ( highlight) is fixed to only one color, a future tweak would be randomizing hex colors.
     let text_in_knowledge_blocks = document.querySelectorAll("em");
 
     let disclaimer = document.getElementById("disclaimer");

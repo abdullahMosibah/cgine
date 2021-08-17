@@ -114,9 +114,10 @@ class question(models.Model):
     quiz = models.ForeignKey(
         quiz, related_name="questions", null=True, on_delete=models.CASCADE
     )
-
+    #its tricky to define a str for questoion, because content is an html. so it wont appear and admin as a normal string,
+    #find a solution for this later, use a regex or something idk. gg
     def __str__(self):
-        return self.content
+        return str(self.content)
 
     def get_choices(self):
         return self.choices.all()
@@ -126,7 +127,7 @@ class question(models.Model):
 
 
 class choice(models.Model):
-    content = models.TextField()
+    content = RichTextUploadingField(blank=True,null=True)
     is_correct = models.BooleanField()
     question = models.ForeignKey(
         question, null=True, related_name="choices", on_delete=models.CASCADE
