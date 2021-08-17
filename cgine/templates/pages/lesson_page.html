@@ -153,7 +153,7 @@
                 {% for choice in question.get_choices %}
                   <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
                     <div id="no{{ choice.id }}"
-                         v-on:click="check('no{{ choice.id }}','{{ choice.content }}','{{ choice.is_correct }}');"
+                         v-on:click="check('no{{ choice.id }}','{{ choice.content | safe }}','{{ choice.is_correct }}');"
                          class="quiz-choice shadow mr-3 px-4">
                       <div class="row justify-content-start">
                         <img id="no{{ choice.id }}pic" class="mx-1" width="50rem" height="50rem"
