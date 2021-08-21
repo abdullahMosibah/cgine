@@ -1,3 +1,3 @@
 release: python manage.py migrate
 
-web: gunicorn config.wsgi:application
+web: gunicorn --timeout 30 config.wsgi:application
