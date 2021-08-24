@@ -3,9 +3,9 @@ import uuid
 from django.db import models
 import cgine.users.models as user
 from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import  RichTextUploadingField
+from ckeditor_uploader.fields import RichTextUploadingField
 
-from s3_file_field import S3FileField
+#from s3_file_field import S3FileField
 
 
 class category(models.Model):
@@ -14,7 +14,7 @@ class category(models.Model):
     icon = models.FileField(upload_to="category_icons/")
 
     def __str__(self):
-        return  str(self.id) + " " + self.name
+        return str(self.id) + " " + self.name
 
     @property
     def get_lessons(self):
@@ -24,13 +24,14 @@ class category(models.Model):
         return f"/category/{self.id}"
     # temporary fix  for category url
 
+
 class lesson(models.Model):
-    #TODO: add the enterprise options.
+    # TODO: add the enterprise options.
     PUBLIC = "public"
     PRIVATE = "private"
 
-    STATUS= [
-        (PUBLIC,  'community public'),
+    STATUS = [
+        (PUBLIC, 'community public'),
         (PRIVATE, 'private'),
     ]
 
@@ -38,7 +39,7 @@ class lesson(models.Model):
         primary_key=True, default=uuid.uuid4, editable=True, unique=True
     )
     author = models.ForeignKey(user.User, null=True, on_delete=models.CASCADE)
-    status = models.CharField(max_length=9,choices=STATUS, null=True,default=PUBLIC)
+    status = models.CharField(max_length=9, choices=STATUS, null=True, default=PUBLIC)
     category = models.ForeignKey(
         category, related_name="lessons", null=True, on_delete=models.CASCADE
     )
@@ -72,11 +73,11 @@ class knowledge_block(models.Model):
         lesson, related_name="knowledge_blocks", null=True, on_delete=models.CASCADE
     )
     time_added = models.DateTimeField(auto_now_add=True, null=True)
-    content = RichTextUploadingField(blank=True,null=True)
-    video =  S3FileField()#models.FileField(upload_to="videos/")
-    audio = models.FileField(blank=True,upload_to="audios/", null=True)
-    resource = RichTextUploadingField(blank=True,null=True)
-    glossary = RichTextUploadingField(blank=True,null=True)
+    content = RichTextUploadingField(blank=True, null=True)
+    video = models.FileField(upload_to="videos/")  # S3FileField(upload_to="videos/")
+    audio = models.FileField(blank=True, upload_to="audios/", null=True)
+    resource = RichTextUploadingField(blank=True, null=True)
+    glossary = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -112,12 +113,13 @@ class quiz(models.Model):
 
 
 class question(models.Model):
-    content = RichTextUploadingField(blank=True,null=True, default="a question")
+    content = RichTextUploadingField(blank=True, null=True, default="a question")
     quiz = models.ForeignKey(
         quiz, related_name="questions", null=True, on_delete=models.CASCADE
     )
-    #its tricky to define a str for questoion, because content is an html. so it wont appear and admin as a normal string,
-    #find a solution for this later, use a regex or something idk. gg
+
+    # its tricky to define a str for questoion, because content is an html. so it wont appear and admin as a normal string,
+    # find a solution for this later, use a regex or something idk. gg
     def __str__(self):
         return str(self.content)
 
@@ -129,7 +131,7 @@ class question(models.Model):
 
 
 class choice(models.Model):
-    content = models.TextField(blank=True,null=True)
+    content = models.TextField(blank=True, null=True)
     is_correct = models.BooleanField()
     question = models.ForeignKey(
         question, null=True, related_name="choices", on_delete=models.CASCADE
@@ -146,16 +148,15 @@ class plan(models.Model):
     def __str__(self):
         return self.name
 
+
 class membership(models.Model):
-    user = models.ForeignKey(user.User,null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(user.User, null=True, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
     plan = models.ForeignKey(plan, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return   str( self.user)
+        return str(self.user)
 
 # 1 lesson => m knowledgeBlocks --> 1 quiz --> m questions
-#m = multiple
-
-
+# m = multiple
