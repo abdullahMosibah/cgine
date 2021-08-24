@@ -72,7 +72,7 @@ THIRD_PARTY_APPS = [
     "ckeditor",
     "ckeditor_uploader",
     #'s3_file_field',
-    's3file',
+    #"s3file",
 
 ]
 
@@ -137,7 +137,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    's3file.middleware.S3FileMiddleware',
+    #"s3file.middleware.S3FileMiddleware",
 ]
 
 # STATIC
