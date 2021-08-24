@@ -71,6 +71,8 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "ckeditor",
     "ckeditor_uploader",
+    's3_file_field',
+
 ]
 
 LOCAL_APPS = [

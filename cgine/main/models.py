@@ -5,6 +5,8 @@ import cgine.users.models as user
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import  RichTextUploadingField
 
+from s3_file_field import S3FileField
+
 
 class category(models.Model):
     app_label = "main"
@@ -71,7 +73,7 @@ class knowledge_block(models.Model):
     )
     time_added = models.DateTimeField(auto_now_add=True, null=True)
     content = RichTextUploadingField(blank=True,null=True)
-    video = models.FileField(upload_to="videos/")
+    video =  S3FileField()#models.FileField(upload_to="videos/")
     audio = models.FileField(blank=True,upload_to="audios/", null=True)
     resource = RichTextUploadingField(blank=True,null=True)
     glossary = RichTextUploadingField(blank=True,null=True)

@@ -17,3 +17,4 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 # third-party
 #---------------------------------------------------------------------------------
 django-ckeditor # https://github.com/django-ckeditor/django-ckeditor
+django-s3-file-field[boto3] #https://github.com/girder/django-s3-file-field
